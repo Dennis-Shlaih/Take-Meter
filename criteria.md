@@ -51,64 +51,74 @@ whether you hit them:
 
 ---
 
-## 1.
-
-<!-- Your criterion. It must name a number. -->
-
-
-
-**Why this target:**
-
-
-
+## 1. Overall accuracy
+ 
+Overall accuracy on the held-out set is at least **0.65** on every seed.
+ 
+**Why this target:** With four labels, chance is 25%, and a model that always
+guessed my biggest label would score no more than 50% (criterion 4 caps any
+label at 50% of my data). 0.65 puts the model at least 15 points above that
+guess, while still leaving roughly one post in three wrong, which is about
+what I'd expect from a small model.
+ 
 ---
-
-## 2.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
+ 
+## 2. Per-label F1
+ 
+Every label has an F1 of at least **0.55** on the held-out set on every seed,
+except my thinnest label, which needs at least **0.45**.
+ 
+**Why this target:** Overall accuracy can hide a dead label: a model could
+ignore `reaction` entirely and still look fine. 0.55 because the model can find
+each label more often than it misses it. My thinnest label will have around 30
+examples (the floor in criterion 4), so only about 6 land in the test split,
+and one wrong prediction swings its F1 by 0.10 or more. I loosened its target
+by 0.10 for that reason instead of pretending the score will be stable.
+ 
 ---
-
-## 3.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
+ 
+## 3. The analysis / hot_take boundary
+ 
+On the held-out set, on every seed, at most **25%** of true `hot_take` posts
+are predicted as `analysis`, and at most **25%** of true `analysis` posts are
+predicted as `hot_take`.
+ 
+**Why this target:** This pair is part of the research question: can the model tell
+evidence-based reasoning from unsupported generalization? The likely failure
+is a model that learns "contains numbers means analysis", which would potentially mislabel a rant post. Overall accuracy would not show that. I set 25% rather than
+something tighter because this is the boundary I find hardest.
+ 
 ---
-
-## 4.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
+ 
+## 4. Balance
+ 
+In `labels.csv`, no label makes up more than **50%** of the rows, and no label
+has fewer than **30** rows (15% of 200).
+ 
+**Why this target:** The project's rule is 70%, but at 70% a model that always
+guesses the biggest label scores 0.70 and my accuracy target in criterion 1
+would be meaningless. Capping at 50% keeps that baseline well below my
+target. The 30-row floor is what makes criterion 2 measurable: with fewer, my
+thinnest label would have about 4 test examples and its F1 would be noise. In
+my early reading sample `reaction` was the hardest label to find, so this floor
+is the one most likely to need extra sampling.
+ 
 ---
-
-## 5.
-
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
-
+ 
+## 5. Consistency
+ 
+On a blind relabel of **30** randomly chosen rows from `labels.csv`, my new
+labels agree with my original labels on at least **80%** of them. The relabel is
+done by a classmate using only my written definitions if I can get one, or by
+me at least two days later without looking at the original labels.
+ 
+**Why this target:** A model cannot reliably beat the agreement of the people
+who labeled the data, so this must sit above the model's 0.65 target in
+criterion 1. With four labels and a hot_take / reaction boundary I already
+found uncertain, I don't expect near-perfect agreement, so 80% is a real test
+without being unreachable. If I fall short, the definitions need fixing before
+training, not after.
+ 
 ---
 
 <!-- ─────────────────────────────────────────────────────────────────────────
