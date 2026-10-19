@@ -5,6 +5,7 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+analysis: the author's own claim is backed by at least one checkable detail given in the post (a measurement with hardware and config, a comparison across sources, a calculation, a flagged inconsistency)
+announcement: relays a release, news item, or someone else's results, with no claim of the author's own to defend
+hot_take: the author argues or asserts a judgment about the field, a tool, or other people, without support a reader could check; anger, profanity and unverifiable figures do not make it analysis
+reaction: the post's content is mainly the author's feeling (excitement, amusement, frustration), with no judgment being argued
