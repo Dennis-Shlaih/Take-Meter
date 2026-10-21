@@ -1,0 +1,772 @@
+text,label,note
+"Mistral Nemo is uncensored
+Mistral Nemo has been overlooked by the recent release of Llama 3.1, but it is highly performant model that is also incredibly uncensored. According to the UGI leaderboard <url>, it surpasses all of the other ~13b models. Surprisingly, the instruct model is more uncensored than the base model instead of the reverse. There aren't much benchmarks online with the model yet, but given Mistral's track record it's safe to say it will punch well above its weight and compete against larger models.",hot_take,"Leaderboard link supports performance, not the central ?uncensored? and future-capability claims; hot_take."
+"This vision model update is pretty excellent! MiniCPM-Llama3-V 2.5
+I just saw this project on github trending and tried out their test page. This has absolutely blown moondream or other LLaVA versions i've tried out of the water. Text was perfectly transcribed and the images I tested were described in more detail than any of my previous experiments:
+
+<url> (English Readme)
+
+Huggingface Demo:
+<url>",hot_take,"The qualitative comparison is a personal impression; no test inputs, scores, or reproducible setup are stated in the post text. Demo links alone do not count as evidence."
+"I’m waiting for some crazy people to bridge playstation 3s and run LLM models on them somehow.
+You know, things happen.",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Deek Seek way of thinking
+Kept asking deepseek-r1-distill-qwen-1.5b ""what are you?"" and ""What are you designed for""
+
+The model picks up a random piece of information and starts doing internal thinking and reasoning",analysis,"Analysis: names the model and prompts tested, but gives no example output; evidence is thin."
+"Meta, IBM, NASA, etc. form open source AI Alliance
+Three cheers for open source! Most of the articles I've seen on this so far have been behind a paywall, but here's one link that isn't: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"1 million context is the scam , the ai start hallucinating after the 90k . im using the qwen cli and its become trash after 10 percent context window used
+this is the major weakness ai have and they will never bring this on the benchmark , if u r working on the codebase the ai will work like a monster for the first 100k context aftert that its become the ass",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"Before you try, this is the limit
+
+
+So, I want to run this locally, and I spent an hour on negotiation. To all those that want to try this, IT WILL NOT GO DOWN TO 99 CENTS.
+
+BAND TOGETHER AND SUE",hot_take,Hot_take: the price complaint and call to sue lack enough context or checkable support.
+"NVIDIA Releases Nemotron Nano 2 AI Models
+• 6X faster than similarly sized models, while also being more accurate
+
+• NVIDIA is also releasing most of the data they used to create it, including the pretraining corpus
+
+• The hybrid Mamba-Transformer architecture supports 128K context length on single GPU.
+
+Full research paper here: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"AI conversations
+With all the recent advancements in AI, I realized I don’t have many people in my day to day life to share news with, bounce around theories, and have meaningful and intellectual conversations around AI, AGI, and quantum. So, I created a Telegram group for anyone interested in conversations around AI.
+
+If anyone wants to chat, reach out. Not throwing the link in here as I don't want this to be seen as self promotion, which is certainly not my intention.",announcement,"Invites readers to the author?s own Telegram group, which counts as sharing the author?s own community/resource."
+"GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+article by Georgi Gerganov, Xuan-Son Nguyen, Aleksander Grygier, Lysandre, Victor Mustar, Julien Chaumond",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"building a keyword extractor (and merger) with LLMs
+i wrote a long-form post on how i built a analytics pipeline to classify text and extract keywords from a lot of user feedback data. hope it can be of value for anyone doing similar things :)
+
+<url>",announcement,Self-authored tutorial/resource; announcement fits the clarified definition for the author's own release or resource.
+"Know the capabilities of your models before coding a big project
+I spent a bunch of time creating scripts that can take base64 strings of encoded PDFs, converting them to PDFs in memory, OCRing the text, then funneling that text to a local AI model for summarizing and categorizing. Well guess what, the Gemma family of models, and probably others, can just take a 100,000 character base 64 string, decode it in memory and summarize the text, with no plugins needed. What the hell lol",analysis,Analysis based on a described personal test and input size; no outputs or reproducible setup are supplied.
+"Llama 4 is actually goat
+NVME
+Some old 6 core i5
+64gb ram
+LLaMa.C++ & mmap
+Unsloth dynamic quants
+
+Runs Scout at 2.5 tokens/s
+Runs Maverick at 2 tokens/s
+
+2x that with GPU offload & --override-tensor ""([0-9]+).ffn_.*_exps.=CPU""
+
+200 dollar junk and now feeling the big leagues. From 24b to 400b in an architecture update and 100K+ context fits now?
+
+Huge upgrade for me for free, goat imo.",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Macbook bros, we eating good this week
+M4 pro has almost doubled the maximum RAM configuration from M3 pro. From that alone we can extrapolate another doubling for M3 Max -> M4 Max leading to 256 GB max ram. And maybe even 512 GB max ram for M4 Ultra. I think the larger local models will become much more accessible and hope Apple does more work to develop MLX and make it even more attractive to utilize local models on their hardware. The ROI on getting apple hardware for local inference seems the highest as of now.",hot_take,Hot_take: extrapolates future memory capacity and ROI from one product change without support for the projections.
+"DeepSeek just updated to a 1M context window!
+The DeepSeek app was just updated with 1M context, and the knowledge cutoff date is now May 2025. It's unclear for now if this is a new model. Also, there hasn't been any movement on their Hugging Face page yet.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"New small models: H2O Danube3 4B and 500M (Apache 2.0)
+Collection (with GGUF): <url> Technical report: <url> From Vaibhav (VB) Srivastav on X: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Finally InternVL3_5 Flash versions coming
+not available but created on <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"For example, Deepseek v1.3 is now cheaper than Claude 4, which has a lower price.
+Who has noticed that closed models are no longer as popular as they used to be? Openia was wrong about GPT-5, Anthropic is self-destructing, and Google is irrelevant.
+
+- This is accompanied by the fact that the models are open and the APIs are cheaper.
+
+- For example, Deepseek v1.3 is now cheaper than Claude 4, which has a lower price.",hot_take,Hot_take: broad claims about model popularity and company performance are not substantiated; the price comparison is unclear.
+"GLM 4.5 possibly releasing today according to Bloomberg
+Bloomberg writes:
+
+>The startup will release GLM-4.5, an update to its flagship model, as soon as Monday, according to a person familiar with the plan.
+
+The organization has changed their name on HF from THUDM to zai-org and they have a GLM 4.5 collection which has 8 hidden items in it.
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"A Time-Efficient AI Approach for Building a Domain-Specific Dense Retrieval Model
+The researchers from the College of Computer Science, Sichuan University and Engineering Research Center of Machine Learning and Industry Intelligence, Ministry of Education Chengdu, China, have introduced DREditor, a time-efficient method for adapting off-the-shelf dense retrieval models to specific domains <url>. DREditor achieves 100–300 times faster time efficiency while maintaining or surpassing retrieval performance.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"AMD Ryzen AI Max+ 395 Llama 3.1 70B-Q4 twice as fast RTX 4090
+
+
+Looks like game is on for fast inference for consumers.",hot_take,Hot_take: the title gives a speed comparison without test conditions; ?game is on? is an unsupported judgment.
+"Qwen3 pull request sent to llama.cpp
+The pull request has been created by bozheng-hit, who also sent the patches for qwen3 support in transformers.
+
+It's approved and ready for merging.
+
+Qwen 3 is near.
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"fblgit/una-xaberius-34b-v1beta is caught cheating on leaderboard. UNA cybertron juanako is just a lie.
+<url> I suspected last week that this model, and the author(  juanako.ai <url> / Xavier M. / fblgit ), is a liar, and 5 days later I got a further confirmation from HF discussion here: <url> So there is no such methodology, UNA is nothing but cheating.
+
+HF staff ran contamination detection tool on this model, and it's got a 99% chance of being contaminated on GSM8K.",analysis,The post states a specific checkable finding: HF staff ran contamination detection and reported a 99% chance of GSM8K contamination; the broader accusation is stronger than that finding.
+"Qwen3.5-35B-A3B Q5_K_M:Best Model for NVIDIA 16GB GPUs
+AesSedai/Qwen3.5-35B-A3B-GGUF Q5_K_M works well on 5070ti 16GB.
+
+57 tokens/s
+
+Mean KLD: 0.0058
+
+Within the Qwen3.5-35B-A3B-GGUF series, this model delivers the best performance on NVIDIA 16GB GPUs.
+
+config:LM studio , -c 71680 , GPU offload 40,k cache q8_0 ,v cache q8_0",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"I managed to jailbreak 43 of 52 recent models
+GPT-5 broke at level 2,
+
+Full report here: rival.tips/jailbreak <url>  I'll be adding more models to this benchmark soon",analysis,Analysis: reports a quantified benchmark outcome and links to the report; the method is not described in the post.
+"ChatGPT 5 embarrassingly working on an old phantom question
+It would not address my new question until I started a new chat with it.",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"The AlphaFold 3 model code and weights are now available for academic use
+<url> From Pushmeet Kohli on X: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"4 AWQ Quantized models from AllenAI
+Excited to announce 4 AWQ quantized models from #AllenAI! 🎉
+
+Molmo-7B-D AWQ (14GB→5GB): Efficient VLM performing between GPT-4V and GPT-4o on academic benchmarks, with just 6.1% perplexity degradation.
+
+MolmoAct-7B-D AWQ (14GB→6GB): Specialized robotic manipulation model reduced by ~57%.
+
+Molmo-72B AWQ (145GB→38GB): VLM with Qwen2-72B decoder that performs competitively with GPT-4, achieving only 10.5% perplexity degradation while saving 107GB of memory.
+
+OLMo-2-32B-Instruct AWQ (64GB→17GB): LLM post-trained on Tülu 3 with 3% perplexity degradation while saving ~50GB.
+
+All VLMs only had their text models quantized.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"StepFun is preparing a ""bigger surprise"" for Chinese New Year, and will also release Step-3.5-Flash-Base.
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Tested running LLMs on iPhone 17 Pro. Its insanely fast.
+Shown in pictures all layers offloaded to GPU with Metal API and all speed enhancement features ticked vs CPU only.",hot_take,The post gives a GPU-offload configuration but no measured speed or other result in its text; the ?insanely fast? judgment relies on pictures.
+"I was asking llama3.1 what is the capital of France ...
+Model: LongWriter-llama3.1-8b-GGUF/LongWriter-llama3.1-8b-Q4_K_M.gguf
+
+Prompt:  ""What is the capital of France. Answer only in JSON without summary and without introduction, using the key 'city'.""
+
+
+Answers: Paris, Londen, Paris...",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Mixtral appreciation post
+Look, look, I know, this sounds like a low effort post, but I really like the name Mixtral and I think everyone should too
+
+I think the boys and gals nailed it on this one. It's really clever and I like it a lot. That's all.",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Open-weights just beat Opus 4.1 on today’s benchmarks (AIME’25, GPQA, MMLU)
+Not trying to spark a model war, just sharing numbers that surprised me. Based on today’s releases and the evals below, OpenAI’s open-weights models edge out Claude Opus 4.1 across math (AIME 2025, with tools), graduate-level QA (GPQA Diamond, no tools), and general knowledge (MMLU, no tools). If these hold up, you no longer have to trade openness for top-tier capability.",analysis,"Analysis: makes a comparison across named evaluations, but omits the actual scores and source links."
+"Ming-flash-omni-2.0: 100B MoE (6B active) omni-modal model - unified speech/SFX/music generation
+Ant Group just open-sourced Ming-flash-omni-2.0, a true (omni-modal) model: image + text + video + audio input → image + text + audio output, all in one unified architecture. Looks realy interesting.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Extensive open source RAG tutorials is getting viral
+Hi all,
+
+Sharing a repo I was working on for a while.
+
+It’s open-source and includes many different strategies for RAG (currently 23), including tutorials, and visualizations.
+
+This is great learning and reference material.
+Open issues, suggest more strategies, and use as needed.
+
+It got very popular - 5K stars within a month!
+
+Enjoy!",announcement,Self-authored repository showcase; announcement fits the clarified definition for the author's own release or resource.
+"Just pushed M2.1 through a 3D particle system. Insane！
+Just tested an interactive 3D particle system with MiniMax M2.1.
+
+Yeah… this is insane. 🔥
+
+And I know you’re gonna ask — M2.1 is coming soooooon.",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Stanford just dropped 5.5hrs worth of lectures on foundational LLM knowledge
+Enjoy? <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Qwen3 30B A3B Q40 @ 13 tok/sec on Raspberry Pi cluster
+Distributed llama is really promising for local inference. You could run multiple boxes on different circuits in your home to deal with power limitations, and scale capacity constraints horizontally. It doesn’t solve for running large open models, but it makes smaller ones potentially way faster.",analysis,"Analysis: reports model, hardware class, and speed, but omits enough configuration detail to reproduce it."
+"Manufactured 4090 48gb AMA
+Hello all I have run a Galax manufactured 48gb card for about a year now with flawless results and CUDA up to 13.0. These particular cards are SKU cards not resolders thankfully. The resolders I had were pure garbage. But maybe I got bad batch. Anyhows these cards rock. I'll post t/s asap as its just now coming off rental. Anyhow AMA I love talking cards.",hot_take,"Hot_take: first-hand experience is offered, but ?these cards rock? generalizes beyond the stated evidence."
+"Compared AMD 7900 XTX to Nvidia ada 4000 SFF
+Compared with Ollama and phi4:latest model.
+
+* architecture        phi3
+* parameters          14.7B
+* context length      16384
+* embedding length    5120
+* quantization        Q4_K_M
+
+
+
+AMD 7900 XTX (300w tdp)
+prompt eval duration: 5ms
+eval rate:            54.26 tokens/s
+
+430W during inference total systempower
+
+Nvidia 4000 SFF ada (70W tdp)
+prompt eval duration: 21ms
+eval rate:            26.45 tokens/s
+
+134W during inference total systempower",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Your Prompts Are Not Safe Adverts for LLMs via RAG
+Tech bros are gonna injecte ad's into promot outputs, imo race to the bottom begins.
+Paper even has some weird measurement for ""social welfare"" get real!!
+we've seen the hot mess of website and video adverts its only bonna pillz and milf in your zip code!
+If you dont have RAG with web searches saved this would be a good time to build one.
+
+Revenue = Relevance / Social welfare
+
+<url>",hot_take,"Hot_take: the linked paper is mentioned, but the post?s broader prediction and criticism are not supported by checkable details."
+"KAT-V1-40B: mitigates over-thinking by learning when to produce explicit chain-of-thought and when to answer directly.
+<url> Note: I am not affiliated with the model creators",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"NVIDIA Tensor RT
+This is interesting, NVIDIA TensorRT speeds up local AI model deployment on NVIDIA hardware by applying a series of advanced optimizations and leveraging the specialized capabilities of NVIDIA GPUs, particularly RTX series cards.
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Another open-source implementation of Flamingo
+InfiMM: Advancing Multimodal Understanding from Flamingo's Legacy through Diverse LLM Integration
+
+Infi-MM/infimm-zephyr · Hugging Face <url>
+
+This claims to be the best open-sourced model on MMMU Testing split.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"LLM Awards 2025: Based on Workflow, Value and Taste
+I use LLMs daily for coding, research and writing.
+These are very subjective takes based on instruction following, latency, cost, and general usability. Not considering benchmarks.",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"Qwen 3 14B seems incredibly solid at coding.
+""make pygame script of a hexagon rotating with balls inside it that are a bouncing around and interacting with hexagon and each other and are affected by gravity, ensure proper collisions""",analysis,"The exact coding prompt is stated, making the author's reported test input checkable under the clarified analysis definition."
+"Be careful about the new gguf quants.
+A week ago, a new gguf quant method arrived and this is what we're using now.
+
+<url> This method uses a calibration dataset to improve the perplexity, but the problem with this method is overfitting to the dataset, and it could make the model worse overall (compared to the old gguf quants).
+
+Source: <url> Supposedly, the suggestion to fix this is to use a calibration dataset composed of random tokens instead.",analysis,Analysis: explains a specific quantization concern and points to a source; the evidence is summarized rather than shown.
+"I've built a CLI tool that can generate code and scripts with AI using Ollama or LM studio
+I’ve been working on a CLI tool (similar to **claude-code**) that lets you go from simple questions (e.g., *“I want a script to list the 10 biggest files on my OS”*) to more complex tasks (e.g., *“Build me a RESTful API using Express”*).
+
+You can install it with:
+
+    pip install xandai-cli
+
+And if you’d like to support the project, you can give it a star on GitHub:
+XandAI-CLI <url>",announcement,Self-authored software release; announcement fits the clarified definition for the author's own release or resource.
+"Everyone waiting for more models to get open sources, I'm just here hoping Cohere will open source their custom font
+<url> It's soooo good. I need this font.
+
+Looks like it was commissioned here - <url> Pls open sorce",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Mistral-7B v0.3 has been released
+Mistral-7B-v0.3-instruct <url> has the following changes compared to Mistral-7B-v0.2-instruct <url>
+
+* Extended vocabulary to 32768
+* Supports v3 Tokenizer
+* Supports function calling
+
+
+
+Mistral-7B-v0.3 <url> has the following changes compared to Mistral-7B-v0.2 <url>
+
+* Extended vocabulary to 32768",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Nvidia Parakeet-Realtime-EOU-120m-v1
+Parakeet-Realtime-EOU-120m-v1 is a streaming speech recognition model that also performs end-of-utterance (EOU) detection. It achieves low latency (80ms~160 ms) and signals EOU by emitting an <EOU> token at the end of each utterance. The model supports only English and does not output punctuation or capitalization.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Local Librarian AI
+Librarian AI assistant Victor - set up to help navigate a public library collection (books, DVDs, video games, online resources, etc...), provide local resources for guidance, and answer patron's general questions. Created with intention to work offline and without need for beefy PC for rural libraries in US. I wasn't sure what right flair was. Project for myself/for my application for grad school.",announcement,Personal project showcase; announcement fits the clarified definition for the author's own release or resource.
+"Jamba-Nexus-IKM-v1
+Been waiting for a Mamba-MoE I could fine-tune on my Internal Knowledge Map dataset! Here is the first results fresh out of the oven. Only did a few inference tests before pushing, so I can't promise it'll work awesome right off the bat. I will do another training tomorrow to improve and update. For now I need some sleep
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Apple releases ferret!
+Christmas came early lol.
+
+Apple Ferret, a new Multimodal Large Language Model (MLLM) capable of understanding spatial referring of any shape or granularity within an image and accurately grounding open-vocabulary descriptions.
+
+They have open sourced the code and model weights.
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Qwen3-Next-80B-A3B-Thinking-GGUF has just been released on HuggingFace
+
+
+Tested q4_k_m. It did the best Tetris in a single HTML file I've ever seen. I tried Devstral recently and the results weren't as accurate.",analysis,"Analysis: reports a specific hands-on model comparison, though the task and scoring are not reproducible from the post."
+"I made it! 90 t/s on my iPhone with llama1b fp16
+We completely rewrite the inference engine and did some tricks. This is a summarization with llama 3.2 1b float16. So most of the times we do much faster than MLX. lmk in comments if you wanna test the inference and I’ll post a link.",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Xwin updated their V0.2 versions, incredible performance
+Expecially Xwin-LM-13B-V0.2 and Xwin-MLewd-13B-V0.2
+
+
+After a brief attempt on Xwin-MLewd-13B-V0.2 by me and my friends, these two models are excellent at rp. In my humble opinion, they managed to distill 70B to 13B, so fast than I expected.
+Still, I don't think it's as advanced as the 70B in terms of semantic understanding.
+
+I hope someone will test the Xwin V0.2 series models in detail, their work is really impressive.
+
+
+My ExLlamaV2 quantization (original version):  Eigeen/Xwin-LM-13B-V0.2-exl2 · Hugging Face <url>
+MLewd:  R136a1/Xwin-MLewd-13B-V0.2-exl2 · Hugging Face <url>",hot_take,"The brief personal trial and model names do not include the prompts, outputs, or results needed to check the broad quality judgments."
+"First results of the Neural accelerators of M5 are trickling in
+It seems that the promises of 3.5x TTFT in regards to the M4 are holding up quite well. A test of 10K prompt in 10 sec. is quite nice.
+<url> And diffuse models seems also to have a nice speed up:
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"2 month MiniPC mini-review: Minisforum AI X1 Pro (AMD HX 370)
+tl;dr: it's the AI Max 395+'s little brother. Half the price, but not a serious AI workstation.",hot_take,"Hot_take: calls the device unsuitable as a workstation, but gives no review evidence beyond a short price comparison."
+"A Christmas Miracle: Managed to grab 3x RTX 5090 FE at MSRP for my home inference cluster.
+**It has been a challenging year, but it has brought its own blessings too. I am truly grateful to God for so much more than just hardware, but I am also specifically thankful for this opportunity to upgrade my local AI research lab.**
+
+**I just want to wish everyone here a Merry Christmas! Don't give up on your dreams, be ready to work hard, look boldly into the future, and try to enjoy every single day you live.**
+
+**Merry Christmas and God bless!**",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"I've made an app for Ollama and other models
+Hello folks, I'm the solo maker behind <url> a chat ui started as a chatgpt api wrapper, but currently it supports many more, recently I added Ollama support for all the Llama based LLMs.
+
+The setup to use Ollama should be straightforward if you use ChatKit's desktop app (which you can find at <url> ), when using the web app you need to configure Ollama to allow cross-origin requests from the domain chatkit.app <url>, you can follow this guide for more details: <url> Any feedback would be appreciated 🙏",announcement,Self-authored app showcase; announcement fits the clarified definition for the author's own release or resource.
+"Simple dockerized solution to run, serve and generate llamafile locally
+I just finished this for my personal local trials. Let me know if you like it (or not) :).
+
+<url>",announcement,Self-authored tool showcase; announcement fits the clarified definition for the author's own release or resource.
+"The Qwen3-TTS demo is now out!
+Introducing Qwen3-TTS!  Our new text-to-speech model is designed to be multi-timbre, multi-lingual, and multi-dialect for natural, expressive audio. It delivers strong performance in English & Chinese, and we're excited for you to hear it for yourself!",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"MiniMax M2.1 scores 43.4% on SWE-rebench (November)
+Hi!
+We added MiniMax M2.1 results to the December SWE-rebench update.
+
+Please check the leaderboard: <url> We’ll add GLM-4.7 and Gemini Flash 3 in the next release.
+By the way, we just released a large dataset of agentic trajectories and two checkpoints trained on it, based on Qwen models.
+Here’s the post:
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Built an Open Source Local LLM Router to redirect queries to Ollama or Cloud based on complexity
+Hello 👋
+
+Just built a local LLM router => <url> * Scores the query in 4 tiers: simple, standard, complex and reasoning
+* Sends request to selected model (customizable)
+* Tracks consumption of each message
+
+And of course compatible with Ollama, so you can route to a cloud provider for more complex queries.
+
+I would love to have your toughts!",announcement,Self-authored router showcase; announcement fits the clarified definition for the author's own release or resource.
+"768Gb ""Mobile"" Ai Server Follow-Up Part 4, Image Gen Temp/Power Stats
+Final part of a follow-up on the ""Mobile"" Ai server post, I recommend reviewing the other three posts/videos first for coherence and flow.
+
+Due to Reddit video size/length restrictions I'm having to break up the video into different parts, but the full (and better quality) video is uploaded to Youtube.
+
+<url> This last section closes the LLM testing and transitions to some temp/whole system power draw stats when doing image gen tasks, then some final remarks.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"I WAS WRONG!!! - MY SYSTEM JUST VERIFIED DEEPSEEK V3.1:671b-cloud - 100% REAL DATA
+**89.3% AIME.**
+**66% SWE-bench.**
+**70x cheaper** than OpenAI.
+**97% OCR** on real docs.
+
+
+
+
+
+This all seems fair to me!",hot_take,Hot_take: gives large benchmark figures without the benchmark method or test setup needed to check the ?verified? claim.
+"Meta released Map-anything-v1: A universal transformer model for metric 3D reconstruction
+Hugging face: <url> It supports 12+ tasks like multi-view stereo and SfM in a single feed-forward pass",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"0xSero/Kimi-K2.5-PRISM-REAP-72 · Hugging Face
+Kimi K2.5 in just 200B, we definitely need a GGUF :)",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"The RI Model (Index Resonance) is a philosophical and mathematical framework describing the ""source code"" of the Universe. RI explains how data is processed ""under the hood"" of existence. Presenting the 9 Fundamental Laws:
+Philosophy",hot_take,Hot_take: asserts a sweeping philosophical framework without checkable support; also appears outside the community?s technical focus.
+"Speed of Fiber Transmission to transport Local LLMs
+I thought this community will like this too:  The speed of optical fiber transmissions is growing. 22 PBit/s, that's like a fully trained GPT4 model transmitted from one place to another in less than a second. Local LLMs might just as well move from one data center to another, just where energy is available. <url>",analysis,"Analysis: cites a transmission-speed figure and derives an implication from it, though the model-size analogy is underspecified."
+"I just found this company that's crazy.
+Damn this is fire.
+
+Source :- <url>",reaction,Reaction: the post mainly expresses excitement about something found; the linked source is not explained.
+"Local speech chat with Gemma3, speaking like a polyglot with multiple-personalities
+Low-latency, speech-to(text-to)-speech conversation in any Linux window:
+
+Demo video here <url>
+
+This is **blahstbot**, part of the UI-less, text-in-any-window, BlahST for Linux.",announcement,Self-authored tool showcase; announcement fits the clarified definition for the author's own release or resource.
+"Salesforce released Large Action Models xLAM - 7B, 8x7B, 8x22B, up to 64K context length primed for AI agents use-cases
+
+
+Source: Vaibhav (VB) Srivastav on X: <url> xLAM-7b-r : <url> xLAM-8x7b-r: <url> xLAM-8x22b-r: <url> Space by Joseph Pollack #Ï on X (Xlam-7b-r): <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Please stop the DeepSeek spamming
+Isn't this for LOCAL LLMs? None of the people posting about it are running it locally.
+Also beware of LLMs you don't control:
+<url>",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"seems visual models are more sensitive than text models on quantization loss.
+IQ4_XS works well for text models. but for visual models, if you ask to recognize images, IQ4_XS are hardly to figure out. I am switching to Q5_K_S.
+
+for the example pic, IQ4_XS may fault on gender, clothes, pose, sometimes it even picked tail. 🫨
+
+the model I tested is this: \Qwen2.5-VL-7B-NSFW-Caption-V3\ <url>",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"#1 model on Open ASR nvidia/canary-qwen-2.5b is available now
+It showed up on the leaderboard as #1 a couple days ago, and it's finally available now.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Deepseek V3 is already up on API and web
+
+
+It's significantly faster than V2 IMO. Leaks says 60tok/s and 600B param (actual activation should be a lot lower for this speed)",announcement,Announcement is the main purpose; the speed and parameter claims are attributed to leaks and remain unverified.
+"Virtuoso-Small-v2 - Distilled from Deepseek-v3, 128k context
+>**Virtuoso-Small-v2 (14B)** is our next-generation, 14-billion-parameter language model that builds upon the original Virtuoso-Small architecture. This version is distilled from Deepseek-v3, leveraging an expanded dataset of 5B+ tokens worth of logits.
+
+arcee-ai/Virtuoso-Small-v2:
+
+<url> gguf:
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"LLama 3.2 1B and Llama-cli will fit on a 1.4 MB floppy disk.
+Wild that something that small contains as much information as it does, blows my mind.",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"bellman (Swedish finetune) based on llama 3.1 8b instruct now available in various ggufs
+
+
+Title says it. Bellman is back with the big llama 3.1 brain.
+
+<url> Let me know if you have any questions.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"DeepSeek-R1-0528 VS claude-4-sonnet (still a demo)
+The heptagon + 20 balls benchmark can no longer measure their capabilities, so I'm preparing to try something new",hot_take,"Hot_take: claims the current benchmark no longer measures capability, but gives no evidence or replacement test results."
+"Transcribing PDFs with LLM-PDF-Utils
+I spent a few days working on <url> This repo includes a couple short scripts which split a PDF into images and then processes them with an image LLM via OpenAI API. It then offers a followup step where another LLM can tag and segment the text in preparation for RAG.
+
+Why does this exist?
+OCR models are great at transcribing text, but cannot transcribe LaTeX. They also cannot describe images, so a lot of data gets lost.",announcement,Self-authored project/resource showcase; announcement fits the clarified definition for the author's own release or resource.
+"LLM logic in TF2 meet the spy
+
+
+What happens at the beginning of the meet the spy TF2 clip reminded me of LLMs :D
+
+Here is the link: <url>",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Connected a 3090 to my Strix Halo
+
+
+Testing with GPT-OSS-120B MXFP4
+
+Before:
+
+    prompt eval time =    1034.63 ms /   277 tokens (    3.74 ms per token,   267.73 tokens per second)
+           eval time =    2328.85 ms /    97 tokens (   24.01 ms per token,    41.65 tokens per second)
+          total time =    3363.48 ms /   374 tokens
+
+After:
+
+    prompt eval time =     864.31 ms /   342 tokens (    2.53 ms per token,   395.69 tokens per second)
+           eval time =     994.16 ms /    55 tokens (   18.08 ms per token,    55.32 tokens per second)
+          total time =    1858.47 ms /   397 tokens",analysis,"Analysis: reports before/after speed measurements, but token counts differ, limiting a direct comparison."
+"Open-source 3.8B LM judge that can replace proprietary models for LLM system evaluations
+Hey u/LocalLLaMA folks!
+
+we've just released our first open-source LM judge today and your feedback would be extremely helpful: <url> it's all about making LLM system evaluations faster, more customizable and rigorous.
+
+Let's us know what you think! We are already planning the next iteration.
+
+PD. Licensed under Apache 2.0. AWQ and GGUF quants avaialble.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Thread on running Gemma 2 correctly with hf
+Thread on running Gemma 2 within the HF ecosystem with equal results to the Google AI Studio: <url> TLDR:
+
+* Bugs were fixed and released on Friday in v4.42.3
+* Soft capping of logits in the attention was particularly important for inference with the 27B model (not so much with the 9B)
+* Precision is especially important: FP32, BF16 seem ok, but FP16 isn't working nicely with the 27B. Using bitsandbytes with 4-bit and 8-bit seem to work correctly.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Apple unveils M5
+Following the iPhone 17 AI accelerators, most of us were expecting the same tech to be added to M5. Here it is! Lets see what M5 Pro & Max will add. The speedup from M4 to M5 seems to be around 3.5x for prompt processing.
+
+Faster SSDs & RAM:
+
+>Additionally, with up to 2x faster SSD performance than the prior generation, the new 14-inch MacBook Pro lets users load a local LLM faster, and they can now choose up to 4TB of storage.
+
+
+150GB/s of unified memory bandwidth",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"192GB VRAM 8x 3090s + 512GB DDR4 RAM AMA
+
+
+I bought and built this 3 months ago, I started with 4x 3090s and really loved the process so got another 4x 3090s
+
+Now I’m convinced I need double the VRAM",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Pindrop: Local-first AI dictation for macOS using WhisperKit
+Built a Mac-native dictation app using WhisperKit (Apple's Whisper implementation). 100% local, 100% open source.
+
+
+
+**Tech stack:**
+
+* Swift/SwiftUI
+* WhisperKit (Core ML optimized)
+* SwiftData for history
+* Native macOS APIs
+
+**Optimized for Apple Silicon.** No cloud, no telemetry, no subscriptions.
+
+**Comparison vs Handy/OpenWhispr:**
+
+* Pindrop: Native Swift, WhisperKit, menu bar
+* Handy: Tauri (Rust+React), generic Whisper, window-based
+* OpenWhispr: Tauri, generic Whisper, window-based
+
+**Why WhisperKit matters:**
+
+* 2-3x faster on M-series chips vs generic Whisper
+* Better battery life (Core ML optimization)
+* Native macOS integration
+
+**GitHub:** <url>",announcement,Self-authored app announcement; the comparative speed/battery claims have no supporting measurements in the post.
+"Command R+ becomes first open model to beat GPT-4 on LMSys leaderboard!
+Not only one version, but actually 2 versions of GPT-4 it beats! It beats GPT-4-0613 and GPT-4-0314.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"AMA With Z.AI, The Lab Behind GLM Models
+# AMA with Z.AI — The Lab Behind GLM Models. Ask Us Anything!
+
+Hi r/LocalLLaMA 👋
+
+Today we are having **Z.AI**, the research lab behind the **GLM family of models**. We’re excited to have them open up and answer your questions directly.
+
+Our participants today:
+
+* **u/zixuanlimit** <url>
+* **u/Maximum_Can9140** <url>
+* **u/zxdu** <url>
+* **u/Sengxian** <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Linearizing Large Language Models
+arxiv: <url> tweet: <url> Transform Mistral into an RNN in a scalable way. Beats RWKV with <10% of the data.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"I made browserllama, an open-source web extension that lets you summarize and chat with webpages using local llms.
+BrowserLlama is a browser extension that lets you summarize and chat with any webpage using a locally running Language model. It currently requires windows 10/11 to function.
+
+Check it out let me know what you think!
+
+Github: <url> Chrome web store link: <url> Firefox addon-store link: <url>",announcement,Self-authored extension showcase; announcement fits the clarified definition for the author's own release or resource.
+"Qwen3 is live on chat.qwen.ai
+They seem to have added 235B MoE and 32B dense in the model list
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"LMSYS Chatbot Arena Update: Claude 3 Opus #1. Starling-LM-7B-beta better than Mixtral, Gemini Pro, Yi-34B, and GPT-3.5
+<url> What do you guys think about the leaderboard update? The Starling-LM-7B-beta placement is interesting.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"MultiverseComputingCAI/HyperNova-60B · Hugging Face
+**HyperNova 60B** base architecture is `gpt-oss-120b` <url>.
+
+* 59B parameters with 4.8B active parameters
+* MXFP4 quantization
+* Configurable reasoning effort (low, medium, high)
+* GPU usage of less than 40GB",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Being skeptical of benchmarks and leaderboards but without solid evidence claiming that companies are rigging benchmarks and leaderboards should be avoided.
+I think we should instead focus on the inadequacies of benchmarks and leaderboards instead of without evidence blaming companies.",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"chatgpt4o just got worse than gpt4 on user interface for coding.
+I tried both and no matter how my prompt are engineered, the output is consistently better on gpt4 vanilla than on gpt4o for coding stuffs",hot_take,"?Consistently better? is a vague personal impression; no examples, prompts, scores, or setup are stated in the post text."
+"Another use for my local llm
+I was helping a friend of mine with an article about AI and software development. As part of it GPT generated a Chrome extension for us, that grabs a content of a site you currently on, and sends it to my local lmstudio with a prompt. Lmstudio returns back list of facts, claims and opinions, along with evidence for each and displays it on the extension in english, regardless of the original site language. Its actually pretty cool, generation took about an hour of iterative process.",announcement,Self-authored extension showcase; announcement fits the clarified definition for the author's own release or resource.
+"Turn Article into Conversation like Podcast
+Fully Local Setup and using Hermes-2-Pro-Llama-3-8B for generation and <url> For TTS",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Improving LLM speeds on 4090
+**I know I can probably get wayy higher tks/sec with ggml, GPTQ, etc. I just wanna make sure I have all the right drivers installed**
+
+I have the following driver/lib versions installed -
+Driver Version: 537.34, CUDA Version: 12.2,
+transformers 4.33.1
+
+I get ~25tks/sec with 7b param LLMs and ~0.4tks/sec with 13b. I've seen people get way more with the same 4090 card and at half precision.
+
+Any specific driver version I should use? I'm open to others suggestions as well.
+
+TIA.",,"Left unlabeled: this is a help request seeking driver advice, and question-only/help-seeking posts are outside the stated scope."
+"12 factor inspired principles but for agents
+I’ve been building agent systems for a while and wanted to write a checklist, inspired by <url> based on my findings
+
+It's an opinionated, practical set of principles that seem to hold across real agent setups: declaring agent identity, versioning agents and evals, guardrails, traceability, human override, budgets, etc.
+
+This is very much a v1 manifesto, and I’m sharing it to get feedback, pressure-test & collaborate
+
+Site: <url> Repo: <url>",announcement,Self-authored checklist/resource; announcement fits the clarified definition for the author's own release or resource.
+"VicUnlocked 65B QLora dropped
+VicUnlocked 65B QLora is out.
+Haven't run this yet, I just found it and won't be able to run it before afternoon. Here <url> are ggml's.
+I am so happy that we finally see more people doing 65B finetunes. Alpaca finetunes were good, but there is room to improve.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"ollama 0.6.2 pre-release makes Gemma 3 actually work and not suck
+Finally can use Gemma 3 without memory errors when increasing context size with this new pre-release.
+
+<url>",analysis,"Analysis: reports a personal fix with a linked release, but gives no version-specific configuration or reproduction steps."
+"Kimi K2.5 is No.1 in the Design Arena, beating Gemini 3 Pro and Claude Opus 4.5
+
+
+It matches my experience. K2.5 can always one-shot a very stunning webpage",announcement,Announcement relays the leaderboard result; the author?s agreement is an unsupported personal endorsement.
+"MDColor is a command-line tool that renders Markdown files with syntax highlighting and color directly in your terminal
+I got fed up with having to deal with reading markdown in the terminal so wrote a small utility which makes markdown easier to read in the terminal.
+
+You can pipe markdown to the tool or use the tool directly on a file. It intelligently calls `less` as a pager for long text.
+
+I hope others will find it useful.",announcement,Self-authored utility announcement; announcement fits the clarified definition for the author's own release or resource.
+"This is how you know
+When you start telling you're LMM ""Implement the FULL PLAN DO NOT STOP UNTIL IT HAS BEEN VERIFIED TRUTH VIA TERMINAL THAT IT IS FUNCTIONING AS INTENDED
+
+
+""",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"The sad state of the VRAM market
+Visually shows the gap in the market: >24GB, $/GB jumps from 40 to 80-100 for new cards.
+
+Nvidia's newer cards also offering less than their 30 and 40 series. Buy less, pay more.",analysis,"Analysis: supplies a price-per-GB comparison supporting the market claim, but gives no source or underlying card prices."
+"I built an offline-first voice AI with <1 s latency on my Mac M3
+Offline-first voice AI built with **FastAPI WebSocket + MLX**, running locally on **M3 Pro**.
+
+**<1 s speech-to-speech latency** using:
+• **silero-vad v6** + **pipecat-ai/smart-turn-v3** → fastest VAD + turn detection
+• **mlx-community/whisper-small.en-mlx-q4** → sentence-wise real-time STT
+• **mlx-community/LFM2-1.2B-4bit** (LLM) + **hexgrad/Kokoro-82M** (TTS) → fully parallel inference
+
+**Optimizations for <1 s:**
+1️⃣ Pre-warm all models
+2️⃣ Parallel **LLM + TTS** (generate + speak per sentence)
+3️⃣ Fastest VAD + smart-turn-3 for real-time segmentation
+
+Youtube Demo <url>
+Gtihub Repo <url>",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"I made a gpt-oss finetuned model
+print(""I'm sorry, I can't help with that"")
+
+it's safemaxxed, try it on safety benchmarks",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Baidu releases ERNIE 4.5 models on huggingface
+llama.cpp support for ERNIE 4.5 0.3B
+
+<url> vllm Ernie4.5 and Ernie4.5MoE Model Support
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Tool calling or not, I will use anyway
+Turns out u can use a model for tool calling even if ollama doesnt support it, just use OpenAI's library since Ollama is compatible with it. Using gemma3 for a deep research agent with openai library perfectly worked even though ollama will not allow for tool calling on gemma3",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Rethinking Priorities: Processing Power vs. Research Budget in AI Development
+Why are big companies only thinking about improving processing power instead of increasing the research budget to build optimal models?  I mean, now a 7b q5 model can give almost the accuracy of a multi-million dollar model!
+
+No matter how much technology advances in the next few years, we will not be able to bring the power of nvidia titan to mobile phones!",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"The SRE’s Guide to High Availability Open WebUI Deployment Architecture
+Based on my real world experiences running Open WebUI for thousands of concurrent users, this guide covers the best practices for deploying stateless Open WebUI containers (Kubernetes Pods, Swarm services, ECS etc), Redis and external embeddings, vector databases and put all that behind a load balancer that understands long-lived WebSocket upgrades.
+
+When you’re ready to graduate from single container deployment to a distributed HA architecture for Open WebUI, this is where you should start!",announcement,Self-authored guide/resource; announcement fits the clarified definition for the author's own release or resource.
+"$750 CHAI Prize Grant for Open-Sourced LLMs
+CHAI wants to support the open-source LLM community.
+
+Anyone who have trained an LLM can apply (we will give out at least 20 prizes, use it for anything you'd like, ideally training LLMs 😊)
+
+Apply here: <url> Criteria: 1 huggingface repo that you own, 1 liner explaining what your model is (optional)",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Nous-Hermes-2-SOLAR-10.7B
+> Hermes on Solar gets very close to our Yi release from Christmas at 1/3rd the size!
+
+> In terms of benchmarks, it sits between OpenHermes 2.5 7B on Mistral and our Yi-34B finetune from Christmas.
+
+- Announcement tweet <url>
+- Hugging Face <url>
+- GGUF <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"SmolVLM2 it's the dumbest shit I ever seen.
+Maybe a monkey can be smatter.",hot_take,"This is a generalized insulting quality judgment about a model, not a feeling about a specific moment or event."
+"text-only support for GLM-4.1V-9B-Thinking has been merged into llama.cpp
+A tiny change in the converter to support GLM-4.1V-9B-Thinking (no recompilation needed, just generate the GGUF).",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"New Coding Model from IBM (IBM Granite)
+IBM has released their own coding model, under Apache 2.
+
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Google Open-Source AlphaChip, the Deep RL Model Accelerating their TPU and ASIC Chip Development.
+<url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Simplifying DPO derivations
+Tried my hand at simplifying the derivations of Direct Preference Optimization.
+
+I cover how one can reformulate RLHF into DPO. The idea of implicit reward modeling is chef's kiss.
+
+
+
+Blog: <url>",announcement,Self-authored explainer/resource; announcement fits the clarified definition for the author's own release or resource.
+"Open-sourced code and data for Self-play Fine-Tuning (SPIN)
+Code: github.com/uclaml/SPIN
+
+Data: huggingface.co/collections/UC…
+
+Models: huggingface.co/collections/UC…
+
+Project Page: uclaml.github.io/SPIN/",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"tlm 1.1 is out! 🥳 🎉
+$ tlm s 'get me a cowsay to express excitement of tlm 1.1 release'
+
+    ┃ > Thinking... (1.198s)
+    ┃ > cowsay ""tlm 1.1 is out! let's celebrate!""
+    ┃ > Executing...
+
+     ----------------------------------
+    < tlm 1.1 is out! let's celebrate! >
+     ----------------------------------
+            \   ^__^
+             \  (oo)_______
+                (__)\       )\/\
+                    ||----w |
+                    ||     ||
+
+ Release 1.1 · yusufcanb/tlm (github.com) <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Local llms works great!
+I am using qwen3:14b it works well for my day to day life and reducing my online llm dependencies. Like you can see in both screenshot I got almost equilant result",hot_take,The comparison relies on screenshots not present in the post text; the stated personal impression is not independently checkable.
+"Switched to Qwen3.5-122B-A10B-i1-GGUF
+Switched to this mradermacher/Qwen3.5-122B-A10B-i1-GGUF:Q4_K_S today on my 6000 Pro from mradermacher/MiniMax-M2.5-REAP-139B-A10B-i1-GGUF:Q4_K_S so far it’s better, main reason to switch was to get more context. The full 262k tokens fit on a 6000 Pro vs only about 65k with the Minimax quant. It’s fast also.",analysis,"The author makes a claim from a reported test, comparison, measurement, or configuration."
+"Z.ai is dominating Hugging Face Trending model list !!
+Multiple zai-org models across vision, speech, and multimodal in the top list.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"New DeepSeek API pricing: -chat prices increasing, -reasoner prices decreasing
+New API pricing scheme goes into effect on September 5, 2025: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Deep Dive into Deep Research with Qwen3-30b-a3b
+I recorded an explanation of how I architected, experimented with, and iterated on a custom deep research application using Qwen3-30b-a3b as the base model for a multi-agent orchestrated flow. Sprinkled in there are a few lessons I learned along the way.
+
+<url> Feel free to hit me up with questions or discussions. This is the primary demo I'm giving at a tech conference in a few weeks so definitely open to improving it based on what folks want to know!",announcement,Self-authored project/demo announcement; announcement fits the clarified definition for the author's own release or resource.
+"Local llama project upgrade
+Hi guys, I have posted my old project local llama here a long time ago and it got some decent interest, so I thought I would come back here again after updating the local LLM from a llama.cpp + gguf engine to the much more impressive and performant ollama. It seriously blows my mind what those guys have done. Anyways take a look, I hope you enjoy it. More improvements to come! <url>",announcement,Self-authored project update; announcement fits the clarified definition for the author's own release or resource.
+"I think I might still prefer Mistral 7b over Llama3 8b
+Just seems to understand better the first time around and its responses are more ""thought out""",hot_take,The central judgment or argument lacks enough checkable support in the post.
+"Gemma2 9B & 27B instruct now available on together.ai API
+Announced a few hours ago:
+
+<url>
+
+Happy about this because now I can easily test the 27B model with my eval notebooks through an API to see if it is worth upgrading my GPUs to run it locally!
+
+Interestingly the system parameter seems to work when I tested it in their playground real quick.  I wonder if they are just concatenating the system and user inputs behind the curtain.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"u/AutoModerator delete message
+u/AutoModerator delete message but I cannot read the reason..
+
+difficut to improve myself...",reaction,"Primarily a personal feeling or experience, rather than an argument about the field or a tool."
+"Fine-tune ColPali for Multimodal RAG
+Hello! I am Merve working at Hugging Face on multimodal AI/vision language models. In transformers we have recently shipped ColPali, cutting-edge multimodal retrieval model built on PaliGemma.
+
+There was no contrastive document retrieval fine-tuning tutorial with transformers, so I have built a fine-tuning tutorial for your convenience 🤗
+
+4-bit QLoRA with batch size of 4 uses 32 GB peak memory so you can run this on Colab's A100 (or use gradient accumulation with lower batch size) <url> I hope this is useful!",announcement,"Announcement of a tutorial; its memory figure is a specific configuration claim, but the post mainly shares the resource."
+"Search is not generation
+My own opinion, but I see a bunch of folks who seem to think that there is a problem where the LLM makes stuff up when pulling out ""facts"".
+
+As in you want to look something up in wikipedia or a company data store (like pricing or other internal ""facts"") and you might try to use something like RAG.
+
+The problem is that the LLM is doing what it is supposed to do. It's generative AI. It's doing generation.
+
+What we have here folks is a failure to understand the domain:
+
+Generation is not search.",hot_take,Hot_take: makes a general argument about generative AI versus search without checkable support in the post.
+"Open weight kimi k2.5 overtakes opus 4.5 non thinking on arena
+<url> Kimi is a 1T parameter model.
+
+Previous related post: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Mac + Blackwell 👀
+It's a WIP, but it's looking like may be possible to pair Macs with NVIDIA soon!
+
+Repo: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Hugging Face says it detected ‘unauthorized access’ to its AI model hosting platform | TechCrunch
+<url> Not a lot of details for now. The Hacker News:
+<url> On X: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"New gemini-test is legit
+Not the exact answer, but much closer compare to the other models (excluding o1-preview and o1-mini)",hot_take,"Hot_take: comparative judgment is unsupported; no prompts, outputs, or evaluation details are given."
+"New Paper: Certifiably robust RAG that can provide robust answers
+Just saw this new paper that has a new approach to solving for inaccurate RAG responses due to corrupted results in the retrieval.
+
+<url>
+
+Basically, they have proposed a keyword aggregation step after retrieval. Haven’t tried it. But seems interesting.",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"A new Microsoft paper lists sizes for most of the closed models
+Paper link: arxiv.org/pdf/2412.19260",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"ktop is a themed terminal system monitor ideal for local LLM setups on Linux (like btop + nvtop)
+I'm working on a hybrid LLM runtime (GPU prefill / CPU inference) and I got tired of switching tabs between nvtop and btop so I built a terminal system monitor that shows both GPUs and CPU (and other good stuff) and also supports themes.
+
+link to ktop on github <url>",announcement,Self-authored tool showcase; announcement fits the clarified definition for the author's own release or resource.
+"guys not goona lie but right now glm 4.6 3 usd plan is the best in the coding world right now im running the api 4 terminal for 4 project and its working so aesthetic and working good
+claude are the vampire , go to the good guys glm 4.6 so easy to implement with crush cli",hot_take,Hot_take: ?best in the coding world? is an unsupported generalization; brief personal use does not establish it.
+"Google releases model with new Griffin architecture that outperforms transformers.
+Across multiple sizes, Griffin out performs the benchmark scores of transformers baseline in controlled tests in both the MMLU score across different parameter sizes as well as the average score of many benchmarks. The architecture also offers efficiency advantages with faster inference and lower memory usage when inferencing long contexts.
+
+Paper here: <url>
+
+They just released a 2B version of this on huggingface today: <url>",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"New VS Code update supports all MCP features (tools, prompts, sampling, resources, auth)
+If you have any questions about the release, let me know.
+
+--vscode pm",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"Ollama cost-effectiveness versus OpenAI
+see <url> TLDR:  if you assume that performance of `ollama run dolphin-mixtral` with `gpt-4-1106-preview`, and you have enough content to run through, then mixtral is ~11x cheaper -- and you get the privacy on top.
+
+Of course, some will claim that `gpt-4-1106-preview` is somehow better than `dolphin-mixtral` and hence such a comparison is moot. I can't argue with that.",analysis,Analysis: the cost claim is conditional and gives an explicit 11x calculation/comparison to check.
+"The DeepSeek online model has been upgraded
+
+
+The DeepSeek online model has been upgraded. The current version number is DeepSeek-V3.1-Terminus. Everyone is welcome to test it and report any issues~",announcement,"Primarily relays a release, result, or resource without a supported independent claim."
+"I am VERY impressed by qwen3 4B (q8q4 gguf version)
+I usually test models reasoning using a few ""not in any dataset"" logic problems.
+
+Up until the thinking models came along, only ""huge"" models could solve ""some"" of those problems in one shot.
+
+Today I wanted to see how a heavily quantized (q8q4) small model as Qwen3 4B performed.
+
+To my surprise, it gave the right answer and even the thinking was linear and very good.
+
+You can find my quants here: <url>",hot_take,"The post names the model and describes a general test approach, but provides none of the logic prompts or outputs needed to check the claimed result."
+"All hail Nemotron-4 the wise - the new king of logical reasoning
+NVIDIA Nemotron-4 340B model finished running prompts from my farel-bench <url> benchmark this morning (it took about 21 hours to process all 450 prompts) and took first place among open-weight models with the score of 78.67 (% of correct answers).
+
+Now I want to repeat the benchmark with added system prompt (for LLaMa-3 70B this significantly improved the result), but this would probably take 2-3 days. Also hopefully LLaMa-3 400B will be released soon and we will witness an interesting heavyweight fight between the two.",analysis,"Analysis: reports a 450-prompt benchmark, score, duration, and linked benchmark; a concrete test supports the ranking claim."

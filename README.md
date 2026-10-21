@@ -51,7 +51,7 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 
 ### `analysis`
 
-**Definition:** The author's own claim is backed by at least one checkable detail given in the post, such as a measurement with its hardware and config, a comparison across sources, a calculation, or a flagged inconsistency.
+**Definition:** The author's own claim is backed by at least one relevant, checkable detail stated in the post text. This can be a number tied to a stated setup, an exact prompt or input used in a described test, a model/quant/hardware configuration relevant to a comparison, a calculation, or a linked source whose finding the post states. A bare link, screenshot, or demo does not count by itself. A vague personal impression such as "I tried both; X is better," without those details, is `hot_take`.
 
 **Example 1:**
 > Using 1,629 published benchmark results, I matched 611 comparisons of 180 models on 103 benchmarks. AI labs reported scores 6.4% higher on average for the same models on the same tests.
@@ -61,7 +61,7 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 
 ### `announcement`
 
-**Definition:** The post relays a release, news item, or someone else's results, without a claim of the author's own to defend.
+**Definition:** The post primarily shares a release, news item, result, or technical resource, including the author's own tool, model, project, tutorial, or update, without making a separate evidence-backed claim the post is chiefly defending. If the author adds their own check, comparison, calculation, or critique, use `analysis`.
 
 **Example 1:**
 > Google just released Harness2 as open source. It turns any AI harness into a system that improves itself over time.
@@ -71,7 +71,7 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 
 ### `hot_take`
 
-**Definition:** The author asserts or argues a judgment about the field, a tool, or other people without support a reader could check; anger, profanity, and unverifiable figures do not make it analysis.
+**Definition:** The author asserts or argues a judgment about the field, a tool, or other people without relevant, checkable support stated in the post text. This includes personal impressions of a tool or model without those details, and insults aimed at a tool or person. Anger, profanity, and unsupported or unverifiable figures do not make it `analysis`.
 
 **Example 1:**
 > In reality, you're paying 3x the API costs for 0.5x the quality.
@@ -81,7 +81,7 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 
 ### `reaction`
 
-**Definition:** The post's content is mainly the author's feeling or personal experience told for its own sake (excitement, amusement, frustration), with no judgment being argued.
+**Definition:** The post's content is mainly the author's feeling about a specific moment or event, or a personal experience told for its own sake (excitement, amusement, frustration), with no general quality judgment being argued. A judgment such as "X is the dumbest" is `hot_take`, even if it is expressed as a feeling.
 
 **Example 1:**
 > I am so dumb. I just found out you can enable cuda on wsl. Yep. Pure moron over here.
@@ -93,14 +93,15 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 
 Ask: **could a stranger check the author's claim using only what is in the post?**
 
-- A figure counts as support only if the post says how it was produced (hardware, config, source, or the link used for that claim). The coding-tools post above gives "3x the API costs for 0.5x the quality" with no method, so it is a `hot_take`. The DeepSeek post gives 26 t/s with the context length and storage setup, so it is `analysis`.
-- Loose numbers with a config ("30-50 tok/s on Q4_K_M") are still `analysis`, just weak. A missing method is what makes a `hot_take`, not imprecision.
-- A link counts only if it supports the author's own claim. A link that proves a source exists (a 2019 news headline) does not support the author's judgment about it.
+- Support must be stated in the post text and relevant to the author's claim. A number tied to a setup, a specific prompt/input used in a described test, or a stated finding from a linked source can count. The coding-tools post above gives "3x the API costs for 0.5x the quality" with no supporting details, so it is a `hot_take`. The DeepSeek post gives 26 t/s with the context length and storage setup, so it is `analysis`.
+- A vague personal comparison ("I tried both; X is better") is a `hot_take` without details that let a reader assess the comparison. A named model or configuration is useful when it makes the author's stated test or comparison checkable.
+- Screenshots, demos, and bare links do not count as evidence by themselves. A link counts when the post states the finding from that source and uses it to support the author's claim.
 
 Two secondary boundaries:
 
-- **`hot_take` vs. `reaction`:** does the post spend most of its words arguing a point, or showing a feeling? An angry post that argues across most of its length is a `hot_take`. A `reaction` is a post where the feeling is the content.
+- **`hot_take` vs. `reaction`:** is the post mainly expressing a feeling about a specific moment or event, or asserting a general judgment? A `reaction` is about the moment or the writer's experience. A general quality judgment or insult about a tool, model, person, or field is a `hot_take`, even when emotional.
 - **`analysis` vs. `announcement`:** does the author add something of their own to the source's numbers, such as a check, a comparison, a calculation, or a critique? If yes, `analysis`. If they only pass the numbers along, `announcement`.
+- **`announcement` invitations:** inviting people to the author's own group or community counts as sharing their own resource and is an `announcement`, unless another label better fits the post's main purpose.
 
 ### The hardest boundary
 

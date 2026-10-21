@@ -68,12 +68,7 @@ what I'd expect from a small model.
 Every label has an F1 of at least **0.55** on the held-out set on every seed,
 except my thinnest label, which needs at least **0.45**.
  
-**Why this target:** Overall accuracy can hide a dead label: a model could
-ignore `reaction` entirely and still look fine. 0.55 because the model can find
-each label more often than it misses it. My thinnest label will have around 30
-examples (the floor in criterion 4), so only about 6 land in the test split,
-and one wrong prediction swings its F1 by 0.10 or more. I loosened its target
-by 0.10 for that reason instead of pretending the score will be stable.
+**Why this target:** Overall accuracy can hide a label that the model rarely predicts correctly. I chose 0.55 as a modest minimum for the balance between precision and recall, rather than requiring near-perfect performance from a small training dataset. My thinnest label will have around 30 examples, leaving only about six in a test split of roughly 20%. I lowered its target to 0.45 because a few individual predictions can substantially change its F1 score.
  
 ---
  
