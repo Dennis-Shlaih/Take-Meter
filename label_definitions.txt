@@ -1,11 +1,4 @@
-# Your label definitions, one per line, as `label: definition`.
-#
-# Copy these from your README so the baseline is judged on exactly the
-# definitions you wrote. baseline.py reads this file.
-#
-# Delete the examples below and put yours in.
-
 analysis: the author's own claim is backed by a relevant, checkable detail stated in the post text, paired with a concrete outcome: for example a number tied to a stated setup, an exact prompt or input used in a described test together with its observed result, a model/quant/hardware configuration relevant to a comparison together with a measured or observed result, a calculation, or a linked source whose finding the post states; an adjective such as "best", "solid" or "impressive" is not a concrete outcome; bare links, screenshots, and demos alone do not count; a vague personal impression without those details is hot_take
 hot_take: the author argues or asserts a judgment about the field, a tool, a model, a person, or other people without relevant, checkable support stated in the post text; this includes personal impressions without such details, tests whose only outcome is an adjective, and insults aimed at a tool or person; anger, profanity, and unsupported or unverifiable figures do not make it analysis.
-announcement: relays a release, news item, or someone else's results, with no claim of the author's own to defend.
+announcement: relays a release, news item, result, or technical resource, including the author's own tool, model, project, tutorial, update, or invitation to the author's own group or community, without making a separate evidence-backed claim the post is chiefly defending.
 reaction: the post's content is mainly the author's feeling (excitement, amusement, frustration), with no judgment being argued.

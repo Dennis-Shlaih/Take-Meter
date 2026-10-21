@@ -113,19 +113,19 @@ A post is `analysis` only if the post text itself states a relevant, checkable d
 
 # The Dataset
  
-**Where the posts came from:** Public posts (and a few top-level comments that stand on their own) from r/LocalLLaMA, spanning several model generations from early Llama and Mistral to recent releases. Candidates were gathered from the community as a whole rather than from a single thread, and I removed posts outside my scope: title-only or link-only posts, pasted model cards, and questions or help requests that only ask for input. That first review removed 19 of 167 candidates, leaving 148 labelled rows. I later added two in-scope posts, bringing the current dataset to 150 labelled rows.
+**Where the posts came from:** Public posts (and a few top-level comments that stand on their own) from r/LocalLLaMA, spanning several model generations from early Llama and Mistral to recent releases. Candidates were gathered from the community as a whole rather than from a single thread, and I removed posts outside my scope: title-only or link-only posts, pasted model cards, and questions or help requests that only ask for input. That removed 19 of 169 candidates, leaving 150 labelled rows. A second sampling round then added 58 more posts, chosen to bring the thin labels (`reaction` and `analysis`) up to the 30-row floor and to push `announcement` below my 50% cap. The same scope rules applied, so question-only, title-only, and mixed-purpose posts from that round were left out. The final file has 208 rows.
  
-**How I labelled them:** The candidates were labelled by combining human oversight with AI assistance, and each row carries a `note` explaining the call. I then reviewed every row against my written definitions for pre-labels. While reviewing, I tightened the `analysis`, `hot_take`, and `reaction` definitions (a checkable detail must be paired with a concrete outcome; adjective-only outcomes, screenshots, demos, and bare links do not count) and re-checked the whole file against the revised wording. That changed 13 labels: 10 `analysis` posts became `hot_take` (e.g. the MiniCPM, Xwin, ChatGPT-4o, and Qwen3-Next posts), 1 `hot_take` became `analysis` (fblgit), 1 `reaction` became `hot_take` (SmolVLM2), and 1 `reaction` became `announcement` (an invitation to the author's own Telegram group). Ambiguous calls are explained in the notes.
+**How I labelled them:** The candidates were labelled by combining human oversight with AI assistance, and each row carries a `note` explaining the call. I then reviewed every row against my written definitions for pre-labels. While reviewing, I tightened the `analysis`, `hot_take`, and `reaction` definitions (a checkable detail must be paired with a concrete outcome; adjective-only outcomes, screenshots, demos, and bare links do not count) and re-checked the whole file against the revised wording. That changed 13 labels: 10 `analysis` posts became `hot_take` (e.g. the MiniCPM, Xwin, ChatGPT-4o, and Qwen3-Next posts), 1 `hot_take` became `analysis` (fblgit), 1 `reaction` became `hot_take` (SmolVLM2), and 1 `reaction` became `announcement` (an invitation to the author's own Telegram group). Ambiguous calls are explained in the notes. The 58 second-round posts were labelled under the final definitions, with a `note` on each; hard calls are flagged as such in `note`.
  
 **Counts per label:**
  
 | Label | Count | Share |
 |---|---|---|
-| `analysis` | 20 | 13.3% |
-| `announcement` | 85 | 56.7% |
-| `hot_take` | 33 | 22.0% |
-| `reaction` | 12 | 8.0% |
-| **Total** | 150 | 100% |
+| `analysis` | 47 | 22.6% |
+| `announcement` | 87 | 41.8% |
+| `hot_take` | 44 | 21.2% |
+| `reaction` | 30 | 14.4% |
+| **Total** | 208 | 100% |
  
 **Three hard cases**
  
@@ -174,7 +174,7 @@ Split sizes: To be filled in after running the notebook's train/validation/test 
  
 - *What I asked for:* A full row-by-row review of my 149 labelled posts for consistency with the definitions, plus suggested tweaks to the definitions themselves.
 - *What came back:* Claude proposed adding "a stated detail must appear in the post text" and "paired with a concrete outcome" to the `analysis` definition, and a table of about a dozen row changes. Two of its suggestions were wrong or shaky. It flipped Qwen 3 14B to `analysis` on an "exact prompt" rule that its own later outcome clause contradicted, and it suggested flipping Mistral Nemo to `analysis` based on its belief about what the UGI leaderboard measures, which it said I should verify.
-- *What I changed:* I kept Mistral Nemo as `hot_take` rather than relying on an unverified claim. I reverted Qwen 3 14B to `hot_take` once the outcome clause made the rule consistent. I wrote the final definitions into `labels.txt` and this README myself, and I decided each of the final label changes, including removing a help request that did not belong in scope.
+- *What I changed:* I kept Mistral Nemo as `hot_take` rather than relying on an unverified claim. I reverted Qwen 3 14B to `hot_take` once the outcome clause made the rule consistent. I wrote the final definitions into `label_definitions.txt` and this README myself, and I decided each of the final label changes, including removing a help request that did not belong in scope.
 **Pre-labelling disclosure:**
  
 I used AI to pre-label the candidate posts. For my last few batches candidates came with a draft label and a `note` explaining it as a pre-label, and I started from those. I then reviewed the rows against my written definitions, and I revised the definitions during that review (adding the "stated in the post text" and "concrete outcome" requirements) and re-checked the whole file under the revised wording. That review changed 13 labels (10 `analysis` to `hot_take`, 1 `hot_take` to `analysis`, 1 `reaction` to `hot_take`, 1 `reaction` to `announcement`) and removed 1 out-of-scope row, so the pre-labels were not accepted wholesale. Claude also helped with the mechanics: it assembled `labels.csv` from the candidate posts acquired, computed the label counts.
