@@ -113,19 +113,19 @@ A post is `analysis` only if the post text itself states a relevant, checkable d
 
 # The Dataset
  
-**Where the posts came from:** Public posts (and a few top-level comments that stand on their own) from r/LocalLLaMA, spanning several model generations from early Llama and Mistral to recent releases. Candidates were gathered from the community as a whole rather than from a single thread, and I removed posts outside my scope: title-only or link-only posts, pasted model cards, and questions or help requests that only ask for input. That removed 19 of 167 candidates, leaving 148 labelled rows.
+**Where the posts came from:** Public posts (and a few top-level comments that stand on their own) from r/LocalLLaMA, spanning several model generations from early Llama and Mistral to recent releases. Candidates were gathered from the community as a whole rather than from a single thread, and I removed posts outside my scope: title-only or link-only posts, pasted model cards, and questions or help requests that only ask for input. That first review removed 19 of 167 candidates, leaving 148 labelled rows. I later added two in-scope posts, bringing the current dataset to 150 labelled rows.
  
-**How I labelled them:** The candidates were labelled by combining human oversight with ai assistance, and each row carries a `note` explaining the call. I then reviewed every row against my written definitions for pre-labels. While reviewing, I tightened the `analysis`, `hot_take`, and `reaction` definitions (a checkable detail must be paired with a concrete outcome; adjective-only outcomes, screenshots, demos, and bare links do not count) and re-checked the whole file against the revised wording. That changed 13 labels: 10 `analysis` posts became `hot_take` (e.g. the MiniCPM, Xwin, ChatGPT-4o, and Qwen3-Next posts), 1 `hot_take` became `analysis` (fblgit), 1 `reaction` became `hot_take` (SmolVLM2), and 1 `reaction` became `announcement` (an invitation to the author's own Telegram group). Ambigious calls are explained in note.
+**How I labelled them:** The candidates were labelled by combining human oversight with AI assistance, and each row carries a `note` explaining the call. I then reviewed every row against my written definitions for pre-labels. While reviewing, I tightened the `analysis`, `hot_take`, and `reaction` definitions (a checkable detail must be paired with a concrete outcome; adjective-only outcomes, screenshots, demos, and bare links do not count) and re-checked the whole file against the revised wording. That changed 13 labels: 10 `analysis` posts became `hot_take` (e.g. the MiniCPM, Xwin, ChatGPT-4o, and Qwen3-Next posts), 1 `hot_take` became `analysis` (fblgit), 1 `reaction` became `hot_take` (SmolVLM2), and 1 `reaction` became `announcement` (an invitation to the author's own Telegram group). Ambiguous calls are explained in the notes.
  
 **Counts per label:**
  
 | Label | Count | Share |
 |---|---|---|
-| `analysis` | 19 | 12.8% |
-| `announcement` | 85 | 57.4% |
-| `hot_take` | 32 | 21.6% |
-| `reaction` | 12 | 8.1% |
-| **Total** | 148 | 100% |
+| `analysis` | 20 | 13.3% |
+| `announcement` | 85 | 56.7% |
+| `hot_take` | 33 | 22.0% |
+| `reaction` | 12 | 8.0% |
+| **Total** | 150 | 100% |
  
 **Three hard cases**
  

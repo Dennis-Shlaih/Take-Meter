@@ -758,3 +758,44 @@ You can find my quants here: <url>",hot_take,"The post names the model and descr
 NVIDIA Nemotron-4 340B model finished running prompts from my farel-bench <url> benchmark this morning (it took about 21 hours to process all 450 prompts) and took first place among open-weight models with the score of 78.67 (% of correct answers).
 
 Now I want to repeat the benchmark with added system prompt (for LLaMa-3 70B this significantly improved the result), but this would probably take 2-3 days. Also hopefully LLaMa-3 400B will be released soon and we will witness an interesting heavyweight fight between the two.",analysis,"Reports a 450-prompt benchmark, score, duration, and linked benchmark; a concrete test supports the ranking claim."
+
+"AI labs report benchmark scores 6.4% higher than independent testers, on average
+I've been building [whatmodel.sh](http://whatmodel.sh/), an open source AI leaderboard, and wanted to see how a labs' own benchmark scores compare with independent testers.
+Using 1,629 published benchmark results, I matched 611 comparisons of 180 models on 103 benchmarks. AI labs reported scores 6.4% higher on average for the same models on the same tests.
+Everything is open: the dataset is CC BY-SA 4.0 and the code is MIT. Sources and their licenses are recorded, with links on each model's page.
+Interactive chart: https://whatmodel.sh/claims
+Data and code: https://github.com/jakemanger/whatmodel
+Please star on Github if you find it useful. Contributions are very much welcome!",analysis,"Analysis: the author compares 611 matched pairs across 180 models using 1,629 published results and reports a 6.4% average gap; the linked dataset and code make the stated finding checkable."
+
+"I absolutely hate how some ""tech"" bros are creating an unnecessary hate hype against AI
+In 2 Months, The A.I Bubble Will Catastrophically Burst.
+ 
+AI Scientists Think There’s A Monster Inside ChatGPT
+ 
+The above are just 2 are just examples of types of videos I'm talking about. I especially don't like the creator of 1st video. That guy seems to hate literally everything. Every time I get a video recommended from his channel it's titled something like ""I hate this"", ""I hate that"", ""I hate him"", ""I hate her"".
+ 
+It's so annoying how these ""tech"" bros are creating an unnecessary hate hype against AI. I don't recommend watching any of these videos. You'll just waste your time watching them.
+ 
+I'm not denying that AI companies such as OpenAI are doing things which are hurting people in many ways such as imo unnecessarily huge data centers but my point is AI is a tech. I'm not denying that a bubble does exist but if anyone is to blame for damages done, it's us humans not that lifeless product of human creativity.
+ 
+I personally think these AI companies should focus more on building smaller yet smarter AI models while also developing better hardware so that people can run it on their devices, rather than accessing it from some huge data center. However Google, OpenAI or any other major AI lab won't open source their top models for several obvious reasons.
+ 
+Many people, such as creators of those videos liked above, don't really understand what AI actually is. For them AI is just LLMs. LLM = AI, AI = LLM. That's all they know. Just tell them about AlphaGo, AlphaFold or Google uses AI for search (not AI mode or AI overview) and they'll get enraged like crazy. I've seen so many people linking to these videos saying things like ""AI is going to destroy the entire world"", ""I don't use AI at all"", ""Cancel AI"" and stuff.
+ 
+Many of that anger is justified cuz of companies stealing data without properly crediting and paying original authors.
+ 
+Plagiarism is also a topic where many people say that ""AI can never learn"" while others say ""If I quote a line of Dutch from RDR2 after listening it on a youtube video with an adblocker, am I plagiarizing or stealing that dialogue as well?"", while some other people argue ""We humans directly or indirectly somewhat rely on plagiarism and stealing to learn as well"".
+ 
+Most people think of AI is ""just a next word predictor"". Yeah your chess engine is predicting the next words, sure buddy. But it's not their fault. Generally such creators just use AI as a synonym for LLM which actually clarifying anything. Most of these people and these creators won't even know that simple decision trees are AI as well.
+ 
+These tech bros are portraying this technology as a ""damaging humanity"", ""killing the world"" which ever clarifying that their channels and many others are running because of this technology. They say AI will take over all their jobs however it seems AI has actually as of now created more jobs, specially self-employed jobs as far as I know and understand.
+ 
+They are using fear and people lack of knowledge of this tech to create a hate hype train unnecessarily scare people, damage the image of this technology which can cause many potentially brilliant people to not work on it at all and slow down the progress. And what are they getting out of it? A lot of money. These creators are making too much money because of AI both as a topic and the algorithm pushing the videos.
+ 
+It's so annoying. Every time I see a post about AI on Instagram the comment section is like ""Say no to AI"", ""AI can't learn"", ""Life was good when 5 years ago AI wasn't real"".
+ 
+Such a mess. All of it is just so annoying. I can't really defend this tech anymore from those people who aren't willing to do their own research and are just watching these pseudo-science, what-if-this-happened type videos. Neither can I stop my youtube and instagram algorithm from recommending me that stuff. Negativity and stupidity moves and spreads a lot faster than the speed of light.
+ 
+This was just me dumping my thoughts on the entire situation. I might later add more parts and better clarification if I feel like.
+ 
+Thanks :)",hot_take,"Hard call, hot_take vs reaction: opens with 'I hate' and closes with 'just me dumping my thoughts', but most of the text argues claims."
