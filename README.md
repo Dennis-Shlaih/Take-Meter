@@ -44,123 +44,111 @@ TakeMeter sorts posts from r/LocalLLaMA, a public Reddit community about running
 ---
 
 ## Label Taxonomy
-
+ 
 **Stretch feature:** `announcement` is a fourth label, added because many r/LocalLLaMA posts relay a release or news item without making a claim of their own, and none of the other three labels fits them.
-
-**Scope:** Examples are public r/LocalLLaMA posts (and top-level comments that make sense on their own). I exclude title-only or link-only posts, bodies that are just a pasted model card, and questions or proposals that only ask for input. For mixed-purpose posts I use the dominant purpose and explain genuinely ambiguous calls in `note`.
-
+ 
+**Scope:** Examples are public r/LocalLLaMA posts (and top-level comments that make sense on their own). I exclude title-only or link-only posts, bodies that are just a pasted model card, and questions or proposals that only ask for input (including help requests). For mixed-purpose posts I use the dominant purpose and explain genuinely ambiguous calls in `note`.
+ 
 ### `analysis`
-
-**Definition:** The author's own claim is backed by at least one relevant, checkable detail stated in the post text. This can be a number tied to a stated setup, an exact prompt or input used in a described test, a model/quant/hardware configuration relevant to a comparison, a calculation, or a linked source whose finding the post states. A bare link, screenshot, or demo does not count by itself. A vague personal impression such as "I tried both; X is better," without those details, is `hot_take`.
-
+ 
+**Definition:** The author's own claim is backed by a relevant, checkable detail stated in the post text, paired with a concrete outcome. The detail can be a number tied to a stated setup, an exact prompt or input used in a described test together with its observed result, a model/quant/hardware configuration relevant to a comparison together with a measured or observed result, a calculation, or a linked source whose finding the post states. An adjective such as "best", "solid" or "impressive" is not a concrete outcome. A bare link, screenshot, or demo does not count by itself. A vague personal impression such as "I tried both; X is better," without those details, is `hot_take`.
+ 
 **Example 1:**
-> Using 1,629 published benchmark results, I matched 611 comparisons of 180 models on 103 benchmarks. AI labs reported scores 6.4% higher on average for the same models on the same tests.
-
+> NVIDIA Nemotron-4 340B model finished running prompts from my farel-bench benchmark this morning (it took about 21 hours to process all 450 prompts) and took first place among open-weight models with the score of 78.67 (% of correct answers).
+ 
 **Example 2:**
-> At 262,144 context with Engram tables (203 GB) on a SATA SSD, I got 26 t/s generation speed and 170 t/s prompt processing speed.
-
+> if you assume that performance of `ollama run dolphin-mixtral` with `gpt-4-1106-preview`, and you have enough content to run through, then mixtral is ~11x cheaper -- and you get the privacy on top.
+ 
 ### `announcement`
-
-**Definition:** The post primarily shares a release, news item, result, or technical resource, including the author's own tool, model, project, tutorial, or update, without making a separate evidence-backed claim the post is chiefly defending. If the author adds their own check, comparison, calculation, or critique, use `analysis`.
-
+ 
+**Definition:** The post primarily shares a release, news item, result, or technical resource, including the author's own tool, model, project, tutorial, update, or invitation to the author's own group or community, without making a separate evidence-backed claim the post is chiefly defending. If the author adds their own check, comparison, calculation, or critique, use `analysis`.
+ 
 **Example 1:**
-> Google just released Harness2 as open source. It turns any AI harness into a system that improves itself over time.
-
+> NVIDIA Releases Nemotron Nano 2 AI Models. 6X faster than similarly sized models, while also being more accurate. NVIDIA is also releasing most of the data they used to create it, including the pretraining corpus.
+ 
 **Example 2:**
-> They claim 1/3 the cost of M3 and 3x the speed. Benchmarks from the announcement: Automation-Bench 62%, ALE 30%, DeepSWE 74%, BabyVision 91%.
-
+> I've built a CLI tool that can generate code and scripts with AI using Ollama or LM studio. I've been working on a CLI tool (similar to claude-code) that lets you go from simple questions to more complex tasks. You can install it with: pip install xandai-cli
+ 
 ### `hot_take`
-
-**Definition:** The author asserts or argues a judgment about the field, a tool, or other people without relevant, checkable support stated in the post text. This includes personal impressions of a tool or model without those details, and insults aimed at a tool or person. Anger, profanity, and unsupported or unverifiable figures do not make it `analysis`.
-
+ 
+**Definition:** The author asserts or argues a judgment about the field, a tool, a model, a person, or other people without relevant, checkable support stated in the post text. This includes personal impressions of a tool or model without such details, tests whose only outcome is an adjective, and insults aimed at a tool or person. Anger, profanity, and unsupported or unverifiable figures do not make it `analysis`.
+ 
 **Example 1:**
-> In reality, you're paying 3x the API costs for 0.5x the quality.
-
+> 1 million context is the scam, the ai start hallucinating after the 90k. im using the qwen cli and its become trash after 10 percent context window used.
+ 
 **Example 2:**
-> Many people, such as creators of those videos liked above, don't really understand what AI actually is. For them AI is just LLMs.
-
+> Who has noticed that closed models are no longer as popular as they used to be? Openia was wrong about GPT-5, Anthropic is self-destructing, and Google is irrelevant.
+ 
 ### `reaction`
-
+ 
 **Definition:** The post's content is mainly the author's feeling about a specific moment or event, or a personal experience told for its own sake (excitement, amusement, frustration), with no general quality judgment being argued. A judgment such as "X is the dumbest" is `hot_take`, even if it is expressed as a feeling.
-
+ 
 **Example 1:**
-> I am so dumb. I just found out you can enable cuda on wsl. Yep. Pure moron over here.
-
+> A Christmas Miracle: Managed to grab 3x RTX 5090 FE at MSRP for my home inference cluster. I am truly grateful to God for so much more than just hardware, but I am also specifically thankful for this opportunity to upgrade my local AI research lab.
+ 
 **Example 2:**
-> I even had a cups update screw up my video drivers by doing something to the kernel. I don't get it.
-
+> LLama 3.2 1B and Llama-cli will fit on a 1.4 MB floppy disk. Wild that something that small contains as much information as it does, blows my mind.
+ 
 ### Decision rule for the hardest boundary: `analysis` vs. `hot_take`
-
-Ask: **could a stranger check the author's claim using only what is in the post?**
-
-- Support must be stated in the post text and relevant to the author's claim. A number tied to a setup, a specific prompt/input used in a described test, or a stated finding from a linked source can count. The coding-tools post above gives "3x the API costs for 0.5x the quality" with no supporting details, so it is a `hot_take`. The DeepSeek post gives 26 t/s with the context length and storage setup, so it is `analysis`.
-- A vague personal comparison ("I tried both; X is better") is a `hot_take` without details that let a reader assess the comparison. A named model or configuration is useful when it makes the author's stated test or comparison checkable.
-- Screenshots, demos, and bare links do not count as evidence by themselves. A link counts when the post states the finding from that source and uses it to support the author's claim.
-
+ 
+Ask: **could a stranger check the author's claim using only what is in the post, and is there a concrete outcome to check it against?**
+ 
+- Support must be stated in the post text and relevant to the author's claim, and it must come with a concrete outcome: a number, an output, a pass/fail, or an error. The Nemotron post gives a 450-prompt benchmark and a score of 78.67, so it is `analysis`. The Qwen3-Next post says it tested q4_k_m and that it "did the best Tetris in a single HTML file I've ever seen", but "best" is an adjective, with no prompt or score, so it is a `hot_take`.
+- Quoting the prompt is not enough on its own. The Qwen 3 14B post gives an exact pygame prompt, but its only outcome is "seems incredibly solid", so it is a `hot_take`. The llama3.1 post gives the model file, the exact prompt, and the answers (Paris, Londen, Paris), so it is `analysis`.
+- A vague personal comparison ("I tried both; X is better", "I think I might still prefer Mistral 7b over Llama3 8b") is a `hot_take`. A named model or configuration helps only when it makes the author's stated test or comparison checkable.
+- Screenshots, demos, and bare links do not count as evidence by themselves. A link counts when the post states the finding from that source and uses it to support the author's claim: the fblgit post states that HF staff's contamination tool gave a 99% chance of GSM8K contamination, so it is `analysis`.
+- Figures that cannot be checked from the post (benchmark numbers with no method, a $/GB range with no named cards) do not make a post `analysis`.
 Two secondary boundaries:
-
-- **`hot_take` vs. `reaction`:** is the post mainly expressing a feeling about a specific moment or event, or asserting a general judgment? A `reaction` is about the moment or the writer's experience. A general quality judgment or insult about a tool, model, person, or field is a `hot_take`, even when emotional.
+ 
+- **`hot_take` vs. `reaction`:** is the post mainly expressing a feeling about a specific moment or event, or asserting a general judgment? A `reaction` is about the moment or the writer's experience. A general quality judgment or insult about a tool, model, person, or field is a `hot_take`, even when emotional ("SmolVLM2 it's the dumbest shit I ever seen" is a `hot_take`).
 - **`analysis` vs. `announcement`:** does the author add something of their own to the source's numbers, such as a check, a comparison, a calculation, or a critique? If yes, `analysis`. If they only pass the numbers along, `announcement`.
 - **`announcement` invitations:** inviting people to the author's own group or community counts as sharing their own resource and is an `announcement`, unless another label better fits the post's main purpose.
-
 ### The hardest boundary
-
-**Which two labels:**
-
+ 
+**Which two labels:** `analysis` and `hot_take`.
+ 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+A post is `analysis` only if the post text itself states a relevant, checkable detail (a number tied to a setup, an exact prompt or input, a configuration, a calculation, or a stated finding from a linked source) together with a concrete outcome. If the support is only a link, a screenshot, a demo, or an adjective like "best" or "solid", it is a `hot_take`, even when the tone is calm and the setup sounds technical.
+ 
 
-
-
----
-
-## The Dataset
-
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
-
-**Where the posts came from:**
-
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
-
+# The Dataset
+ 
+**Where the posts came from:** Public posts (and a few top-level comments that stand on their own) from r/LocalLLaMA, spanning several model generations from early Llama and Mistral to recent releases. Candidates were gathered from the community as a whole rather than from a single thread, and I removed posts outside my scope: title-only or link-only posts, pasted model cards, and questions or help requests that only ask for input. That removed 19 of 167 candidates, leaving 148 labelled rows.
+ 
+**How I labelled them:** The candidates were labelled by combining human oversight with ai assistance, and each row carries a `note` explaining the call. I then reviewed every row against my written definitions for pre-labels. While reviewing, I tightened the `analysis`, `hot_take`, and `reaction` definitions (a checkable detail must be paired with a concrete outcome; adjective-only outcomes, screenshots, demos, and bare links do not count) and re-checked the whole file against the revised wording. That changed 13 labels: 10 `analysis` posts became `hot_take` (e.g. the MiniCPM, Xwin, ChatGPT-4o, and Qwen3-Next posts), 1 `hot_take` became `analysis` (fblgit), 1 `reaction` became `hot_take` (SmolVLM2), and 1 `reaction` became `announcement` (an invitation to the author's own Telegram group). Ambigious calls are explained in note.
+ 
 **Counts per label:**
-
+ 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
-
+| `analysis` | 19 | 12.8% |
+| `announcement` | 85 | 57.4% |
+| `hot_take` | 32 | 21.6% |
+| `reaction` | 12 | 8.1% |
+| **Total** | 148 | 100% |
+ 
 **Three hard cases**
-
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
+ 
 **1.**
-> *The post:*
+> *The post:* "Qwen3-Next-80B-A3B-Thinking-GGUF has just been released on HuggingFace. Tested q4_k_m. It did the best Tetris in a single HTML file I've ever seen. I tried Devstral recently and the results weren't as accurate."
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`
 >
-> *I chose, because:*
-
+> *I chose `hot_take`, because:* the post names a quant, a task, and a comparison model, which makes it look like a test. But the only outcome is the adjective "best", with no prompt, score, or output a stranger could check. Under my rule, a stated setup needs a concrete outcome to count as `analysis`.
+ 
 **2.**
-> *The post:*
+> *The post:* "fblgit/una-xaberius-34b-v1beta is caught cheating on leaderboard. UNA cybertron juanako is just a lie... HF staff ran contamination detection tool on this model, and it's got a 99% chance of being contaminated on GSM8K."
 >
-> *Could have been:*
+> *Could have been:* `hot_take` or `analysis`
 >
-> *I chose, because:*
-
+> *I chose `analysis`, because:* the tone is an angry accusation ("liar", "nothing but cheating"), which is why it first looked like a `hot_take`. But the post states a specific, checkable finding (HF staff's contamination tool, 99% chance, GSM8K) and uses it as support. The accusation goes further than the finding, which I note in `note`, but the definition asks for a checkable detail, not proof.
+ 
 **3.**
-> *The post:*
+> *The post:* "Kimi K2.5 is No.1 in the Design Arena, beating Gemini 3 Pro and Claude Opus 4.5. It matches my experience. K2.5 can always one-shot a very stunning webpage."
 >
-> *Could have been:*
+> *Could have been:* `announcement` or `hot_take`
 >
-> *I chose, because:*
-
----
+> *I chose `announcement`, because:* the post's main purpose is relaying a leaderboard result. The closing sentence is an unsupported endorsement, but it is a short add-on rather than a separate claim the post is chiefly defending.
 
 ## The Training Run
 
@@ -180,28 +168,22 @@ of next unit's variance. -->
 
 ---
 
+ 
 ## How I Used AI
-
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
+ 
 **Moment 1**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
+ 
+- *What I asked for:* After my first pass at the labels, I asked Claude which of five borderline posts (MiniCPM, Deek Seek, LLM Awards, Search is not generation, Mistral 7b vs. Llama3 8b) should change under my written definitions.
+- *What came back:* It said to change none of them. It also pointed out that my `chatgpt4o just got worse than gpt4` post was labelled `analysis` while having less to check than MiniCPM, so the two were inconsistent under the same rule.
+- *What I changed:* I took the inconsistency point and made it a rule instead of fixing one row. I asked for a full consistency pass, then went further than Claude did: I flagged Qwen3-Next ("did the best Tetris") as another `analysis` post that should be a `hot_take`, which Claude had not caught. Claude later conceded that MiniCPM had to flip too, reversing its first answer.
 **Moment 2**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
+ 
+- *What I asked for:* A full row-by-row review of my 149 labelled posts for consistency with the definitions, plus suggested tweaks to the definitions themselves.
+- *What came back:* Claude proposed adding "a stated detail must appear in the post text" and "paired with a concrete outcome" to the `analysis` definition, and a table of about a dozen row changes. Two of its suggestions were wrong or shaky. It flipped Qwen 3 14B to `analysis` on an "exact prompt" rule that its own later outcome clause contradicted, and it suggested flipping Mistral Nemo to `analysis` based on its belief about what the UGI leaderboard measures, which it said I should verify.
+- *What I changed:* I kept Mistral Nemo as `hot_take` rather than relying on an unverified claim. I reverted Qwen 3 14B to `hot_take` once the outcome clause made the rule consistent. I wrote the final definitions into `labels.txt` and this README myself, and I decided each of the final label changes, including removing a help request that did not belong in scope.
 **Pre-labelling disclosure:**
+ 
+I used AI to pre-label the candidate posts. For my last few batches candidates came with a draft label and a `note` explaining it as a pre-label, and I started from those. I then reviewed the rows against my written definitions, and I revised the definitions during that review (adding the "stated in the post text" and "concrete outcome" requirements) and re-checked the whole file under the revised wording. That review changed 13 labels (10 `analysis` to `hot_take`, 1 `hot_take` to `analysis`, 1 `reaction` to `hot_take`, 1 `reaction` to `announcement`) and removed 1 out-of-scope row, so the pre-labels were not accepted wholesale. Claude also helped with the mechanics: it assembled `labels.csv` from the candidate posts acquired, computed the label counts.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
