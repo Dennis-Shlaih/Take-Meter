@@ -152,19 +152,13 @@ A post is `analysis` only if the post text itself states a relevant, checkable d
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** distilbert-base-uncased
 
-**Base model:**
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, maximum sequence length 128, seed 42.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Anything I changed from the defaults, and why:** I updated the label list to include all four categories in my dataset: analysis, announcement, hot_take, and reaction. I kept the other training settings at their provided defaults to establish a baseline before experimenting with hyperparameters.
 
-**Anything I changed from the defaults, and why:**
-
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
-
-
+Split sizes: To be filled in after running the notebook's train/validation/test split. I will record the number of examples in each split and the per-label counts in the test set. 
 
 ---
 
