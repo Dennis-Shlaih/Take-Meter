@@ -158,7 +158,19 @@ A post is `analysis` only if the post text itself states a relevant, checkable d
 
 **Anything I changed from the defaults, and why:** I updated the label list to include all four categories in my dataset: analysis, announcement, hot_take, and reaction. I kept the other training settings at their provided defaults to establish a baseline before experimenting with hyperparameters, with the exception of the number of epochs. There was a real risk of underfit, and the model mostly predicting announcement, as per the data and Claude's prediction based on my choices.
 
-Split sizes: To be filled in after running the notebook's train/validation/test split. I will record the number of examples in each split and the per-label counts in the test set. 
+**Split sizes:** The dataset contains 208 labeled examples: 145 training examples, 31 validation examples, and 32 test examples.
+
+**Per-label counts in the test set (32 examples):**
+
+| Label | Count |
+|---|---:|
+| `analysis` | 7 |
+| `announcement` | 13 |
+| `hot_take` | 7 |
+| `reaction` | 5 |
+| **Total** | **32** |
+
+The test set contains all four labels, but the counts are small, especially for `reaction`. With only five test examples in that category, a single prediction can noticeably affect its precision, recall, and F1 score.
 
 ---
 
