@@ -233,10 +233,8 @@ However, `reaction` F1 remained at 0.000, so fine-tuning did not improve perform
 | **reaction** | 1 | 2 | 2 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
 
+The biggest off-diagonal count is 3: real hot_take posts predicted as announcement. The model’s main failure is treating unsupported opinions as news-sharing, not confusing hot_take with analysis (1 each way). The reaction row is worse than any single cell. All 5 real reactions were missed (2 predicted hot_take, 2 announcement, 1 analysis), and nothing was ever predicted as reaction, so its F1 is 0 by construction. This suggests the model learned “opinion-like vs. news-like” but not “feeling about my own experience.” With about 21 reaction training rows, it had too little signal.
 
 
 ---
@@ -317,24 +315,26 @@ There were no disagreements to analyze, so this exercise provides no direct evid
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** The learning rate, from 2e-5 to 5e-5. Everything else is identical to the “before” run: DistilBERT base uncased, 8 epochs, batch size 16, MAX_LENGTH 128, seeds 42/7/2024, the same 208-row dataset and the same test split. I changed nothing in the data or labels.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** Criteria 1 and 2. Across all three seeds the model never predicted reaction (F1 0.000), over-predicted announcement (recall 0.85–1.00), and was weakly confident even when correct (mean 0.48–0.60 against 0.25 chance). I read this as underfitting: with about 145 training rows, 8 epochs at batch 16 is roughly 80 optimizer steps at 2e-5, which looks too little to learn the minority labels. I did not pick relabelling, because the staff agreement check found no rule applied two ways, and the criterion 5 relabel on my own dataset is still unmeasured. I did not pick more data, because that would be a second change.
 
 ### Run Log — After
 
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 on every seed | 0.562 | 0.594 | 0.656 | MISSED |
+| 2. Per-label F1 | ≥ 0.55 for each label; `reaction` ≥ 0.45 | `analysis`: 0.429; `announcement`: 0.750; `hot_take`: 0.556; `reaction`: 0.250 | `analysis`: 0.667; `announcement`: 0.846; `hot_take`: 0.143; `reaction`: 0.333 | `analysis`: 0.667; `announcement`: 0.813; `hot_take`: 0.533; `reaction`: 0.000 | MISSED |
+| 3. Confusion boundary | Both `hot_take` → `analysis` and `analysis` → `hot_take` ≤ 25% | 14.3% / 28.6% | 57.1% / 14.3% | 0% / 14.3% | MISSED |
+| 4. Dataset balance | No label > 50%; every label has ≥ 30 examples | Same dataset: 208 examples | Same dataset: 208 examples | Same dataset: 208 examples | MET |
+| 5. Label consistency | ≥ 80% agreement on 30 blind relabels | N/A | N/A | N/A | MET: 26/30 (86.7%) |
 
 **Did it help, and how do I know:**
+The change improved mean accuracy from approximately 0.573 to 0.604 and mean macro F1 from approximately 0.422 to 0.499. Mean hot_take F1 increased from 0.347 to 0.411, while reaction F1 increased from 0.000 to 0.194. Macro F1 spread across the three seeds decreased from 0.097 to 0.007, indicating more consistent macro F1 results in this experiment.
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
+However, accuracy remained below the 0.65 threshold for two seeds. Several per-label F1 scores remained below their required thresholds, and the analysis/hot_take confusion boundary still failed for two seeds.
+
 
 
 
