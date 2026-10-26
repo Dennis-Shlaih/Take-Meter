@@ -176,13 +176,13 @@ Split sizes: To be filled in after running the notebook's train/validation/test 
 - *What came back:* Claude proposed adding "a stated detail must appear in the post text" and "paired with a concrete outcome" to the `analysis` definition, and a table of about a dozen row changes. Two of its suggestions were wrong or shaky. It flipped Qwen 3 14B to `analysis` on an "exact prompt" rule that its own later outcome clause contradicted, and it suggested flipping Mistral Nemo to `analysis` based on its belief about what the UGI leaderboard measures, which it said I should verify.
 - *What I changed:* I kept Mistral Nemo as `hot_take` rather than relying on an unverified claim. I reverted Qwen 3 14B to `hot_take` once the outcome clause made the rule consistent. I wrote the final definitions into `label_definitions.txt` and this README myself, and I decided each of the final label changes, including removing a help request that did not belong in scope.
 
-**Moment 3**
-
-For the testing portion, I used AI primarily to review my results and ensure consistency. I also used Claude to help pick and verify the improvement chosen based on the results. 
-
 **Pre-labelling disclosure:**
  
 I used AI to pre-label the candidate posts. For my last few batches candidates came with a draft label and a `note` explaining it as a pre-label, and I started from those. I then reviewed the rows against my written definitions, and I revised the definitions during that review (adding the "stated in the post text" and "concrete outcome" requirements) and re-checked the whole file under the revised wording. That review changed 13 labels (10 `analysis` to `hot_take`, 1 `hot_take` to `analysis`, 1 `reaction` to `hot_take`, 1 `reaction` to `announcement`) and removed 1 out-of-scope row, so the pre-labels were not accepted wholesale. Claude also helped with the mechanics: it assembled `labels.csv` from the candidate posts acquired, computed the label counts.
+
+**Testing:**
+For the testing portion, I used AI primarily to review my results and ensure consistency. I also used Claude to help pick and verify the improvement chosen based on the results. 
+
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
