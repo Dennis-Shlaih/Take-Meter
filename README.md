@@ -243,7 +243,7 @@ The biggest off-diagonal count is 3: real hot_take posts predicted as announceme
 
 ## Verdicts and Diagnoses
 
-| Criterion | Target | Seed 1 | Seed 2 | Seed 3 | Verdict |
+| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
 | 1. Overall accuracy | ≥ 0.65 | 0.594 | 0.531 | 0.594 | MISSED |
 | 2. Per-label F1 | ≥ 0.55; reaction ≥ 0.45 | hot_take 0.429; reaction 0.000 | analysis 0.500; hot_take 0.167; reaction 0.000 | hot_take 0.444; reaction 0.000 | MISSED |
@@ -333,7 +333,7 @@ There were no disagreements to analyze, so this exercise provides no direct evid
 | 5. Label consistency | ≥ 80% agreement on 30 blind relabels | N/A | N/A | N/A | MET: 26/30 (86.7%) |
 
 **Did it help, and how do I know:**
-Modestly, and mostly on the label the diagnosis named. Mean accuracy rose from 0.573 to 0.604 and mean macro F1 from 0.422 to 0.499. reaction went from never predicted to occasionally right (mean F1 0.194, 2 correct of 15), and mean hot_take F1 rose from 0.347 to 0.411. Macro F1 spread across seeds fell from 0.097 to 0.007. Accuracy gains average about one test row per seed (1/32 = 0.031), so with a 32-row test set I can’t separate this from noise. The change also cost something: seed 42’s accuracy and analysis F1 fell (0.594 → 0.5625; 0.667 → 0.429), and criterion 3 now fails on two seeds instead of one. No previously missed criterion was met on every seed. Overall, a higher learning rate helped the model commit to minority labels, but reaction remains far from its target. The next candidate would be more reaction examples.
+Modestly, and mostly on the label the diagnosis named. Mean accuracy rose from 0.573 to 0.604 and mean macro F1 from 0.422 to 0.499. reaction went from never predicted to occasionally right (mean F1 0.194, 2 correct of 15), and mean hot_take F1 rose from 0.347 to 0.411. Macro F1 spread across seeds fell from 0.097 to 0.007. Accuracy gains average about one test row per seed (1/32 = 0.031), so with a 32-row test set I can’t separate this from noise. The change also cost something: seed 42’s accuracy and analysis F1 fell (0.594 → 0.5625; 0.667 → 0.429), and criterion 3 now fails on two seeds instead of one. No previously missed criterion was met on every seed. Overall, the higher learning rate improved mean macro F1 and made reaction predictions possible on two seeds, but its effects varied by seed and did not bring the model to its acceptance targets. The next candidate would be adding more carefully labeled reaction examples.
 
 ---
 
@@ -347,10 +347,7 @@ Modestly, and mostly on the label the diagnosis named. Mean accuracy rose from 0
 
 
 
-**The gap between what I meant my labels to capture and what the model
-learned:**
-
-**Confusion Matrix**:
+**The gap between what I meant my labels to capture and what the model learned:**
 
 I intended analysis to represent claims supported by specific, checkable evidence, while hot_take represents judgments that lack sufficient supporting evidence; however, the confusion matrices show that the model still mixes up these categories, with hot_take → analysis reaching 57.1% for seed 7. I also intended reaction to capture posts centered on personal feelings or experiences, but the model continued to miss this class entirely for seed 2024, suggesting that it has not learned a reliable boundary for reaction across different splits.═════════════════════════════════════════════════════════════════════
 
