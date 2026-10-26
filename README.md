@@ -211,47 +211,39 @@ Fine-tuning improved overall accuracy by **0.188** and macro F1 by **0.245** com
 However, `reaction` F1 remained at 0.000, so fine-tuning did not improve performance across every label. The results suggest that task-specific examples helped, but the model still struggles to recognize reactions. Overall, fine-tuning added measurable value, although the remaining per-label weakness shows that better overall performance does not mean the classifier handles all four categories reliably.
 
 ## Run Log — Before
-# Everything this notebook needs is already in requirements.txt — you installed
-# it when you set the project up. This cell just says what you're running on.
-
- prints one ready to paste.
-     An image of a matrix earns nothing. -->
-
-| true \ predicted | analysis | anouncement | hot_take | reaction
-|---|---|---|---|---|
-| analysis | 5 | 1 | 1 | 0
-| anouncement | 1 | 11 | 1 | 0
-| hot_take | 1 | 3 | 3 | 0
-| reaction | 1 | 2 | 2 | 0
-
-**My biggest off-diagonal number, and what it means:**
-
-The largest off-diagonal count was 3 true hot_take posts predicted as announcement. This suggests the model sometimes treated unsupported opinions or judgments as announcements rather than recognizing that the post was primarily expressing an unsupported claim. The same number of reaction posts were also misclassified as announcement (2) and hot_take (2), showing that the model struggled to distinguish reactions from the other categories. Most notably, it predicted zero posts as reaction, missing all 5 true reaction posts.
-
-
-
----
-
-## Verdicts and Diagnoses
-device: cpu  (CPU)
-torch:  2.14.1+cu130
-
 
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | At least 0.65 on every seed | 0.594 | 0.531 | 0.594 | MISSED — all seeds |
+| 2. Per-label F1 | At least 0.55 for every label; at least 0.45 for thinnest label (`reaction`) | analysis 0.667; announcement 0.733; hot_take 0.429; reaction 0.000 | analysis 0.500; announcement 0.774; hot_take 0.167; reaction 0.000 | analysis 0.667; announcement 0.684; hot_take 0.444; reaction 0.000 | MISSED — every seed |
+| 3. `analysis` / `hot_take` boundary | At most 25% in either direction on every seed | hot_take→analysis 1/7 (14.3%); analysis→hot_take 1/7 (14.3%) | hot_take→analysis 4/7 (57.1%); analysis→hot_take 1/7 (14.3%) | hot_take→analysis 0/7 (0%); analysis→hot_take 0/7 (0%) | MISSED — seed 7 |
+| 4. Dataset balance | No label over 50% and none under 30 rows | 208 rows; counts: announcement 87, analysis 47, hot_take 44, reaction 30 | Same dataset | Same dataset | MET |
+| 5. Label consistency | At least 80% agreement on a blind relabel of 30 rows | Not measured | Not measured | Not measured | NOT MEASURED — agreement report pending |
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook
-<!-- MET or MISSED against LAST UNIT's target. The target has to hold across
+| true \ predicted | analysis | announcement | hot_take | reaction |
+|---|---|---|---|---|
+| **analysis** | 5 | 1 | 1 | 0 |
+| **announcement** | 1 | 11 | 1 | 0 |
+| **hot_take** | 1 | 3 | 3 | 0 |
+| **reaction** | 1 | 2 | 2 | 0 |
+
+**My biggest off-diagonal number, and what it means:**
+<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
+     direction. "7 real analysis posts were called hot_take and only 3 went the
+     other way" is a direction, not just an error rate. -->
+
+
+
+---
+
+## Verdicts and Diagnoses
+
+<!-- MET or MISSED against LAST WEEK's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
 | # | Criterion | Target | Verdict | How I decided |
@@ -262,16 +254,28 @@ torch:  2.14.1+cu130
 | 4 |  |  |  |  |
 | 5 |  |  |  |  |
 
+
 **Diagnoses**
 
-<!-- For each miss: the cause, and how you know. The four common causes are:
-     too few examples for a label, a boundary you applied inconsistently, a
-     genuinely hard label pair, and a task the model can't reach from this
-     much data.
+**Criterion 1 — Overall accuracy**
 
-     ⚠️ Use your agreement report as evidence. It is the only instrument you
-     have that can tell a LABELLING problem from a MODEL problem, and this
-     section is graded on whether you used it that way. -->
+The model did not reach the 0.65 accuracy target on any of the three seeds. Accuracy ranged from 0.531 to 0.594. The small dataset and sensitivity to the train/test split may contribute to this result, but the three runs alone do not establish the cause. The model's weak performance on `hot_take` and `reaction` also contributes to the overall errors.
+
+**Criterion 2 — Per-label F1**
+
+The model consistently struggled with `reaction`, scoring 0.000 F1 on every seed, and performed poorly on `hot_take`, whose F1 ranged from 0.167 to 0.444. `analysis` also fell below its target on seed 7. These results suggest that the model has difficulty distinguishing less consistently represented categories, especially reactions and unsupported opinions. However, the model metrics alone cannot tell us whether the main cause is inconsistent labeling, a genuinely difficult category boundary, or insufficient training data.
+
+**Criterion 3 — Confusion boundary**
+
+The model exceeded the allowed confusion rate between `hot_take` and `analysis` on seed 7: 4 of 7 true `hot_take` posts were classified as `analysis` (57.1%). The other two seeds met both directional limits. This variation suggests that the model's ability to distinguish evidence-backed reasoning from unsupported judgments is sensitive to which examples appear in the held-out split.
+
+**Criterion 4 — Dataset balance**
+
+The dataset meets the stated balance criterion. No label accounts for more than 50% of the 208 examples, and every label has at least 30 examples. However, meeting this numerical criterion does not guarantee that each category has enough clear, representative examples for the model to learn it reliably.
+
+**Criterion 5 — Label consistency**
+
+Diagnosis pending the blind relabeling agreement report. I need the agreement percentage and, ideally, the disagreements and their adjudicated outcomes to determine whether inconsistent labeling may be contributing to the model's errors.
 
 
 
