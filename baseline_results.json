@@ -1,0 +1,200 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 32,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 32,
+    "accuracy": 0.40625,
+    "f1_macro": 0.2125,
+    "per_label": {
+      "analysis": {
+        "precision": 1.0,
+        "recall": 0.14285714285714285,
+        "f1": 0.25,
+        "support": 7
+      },
+      "announcement": {
+        "precision": 0.4444444444444444,
+        "recall": 0.9230769230769231,
+        "f1": 0.6,
+        "support": 13
+      },
+      "hot_take": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7
+      },
+      "reaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Local speech chat with Gemma3, speaking like a polyglot with multiple-personalities\nLow-latency, speech-to(text-to)-speech conversation in any Linux window:\n\nDemo video here <url>\n\nThis is **blahstbot**, part of the UI-less, text-in-any-window, BlahST for Linux.",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Where do yall get so much money to buy such high end equipment \ud83e\udd27\nLike 128GB ram \ud83d\udc80\ud83d\udc80\ud83d\udc80 How \ud83d\ude2d\ud83d\ude2d\ud83d\ude2d I thought I bought a high end laptop, Asus tuf gaming fx505d 16gb ram 4gb vram but yall don't even acknowledge my existence \ud83d\ude2d\ud83d\ude2d\ud83d\ude14",
+      "gold": "reaction",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Qwen3 30B A3B Q40 @ 13 tok/sec on Raspberry Pi cluster\nDistributed llama is really promising for local inference. You could run multiple boxes on different circuits in your home to deal with power limitations, and scale capacity constraints horizontally. It doesn\u2019t solve for running large open models, but it makes smaller ones potentially way faster.",
+      "gold": "analysis",
+      "predicted": "announcement"
+    },
+    {
+      "text": "GLM 4.5 possibly releasing today according to Bloomberg\nBloomberg writes:\n\n>The startup will release GLM-4.5, an update to its flagship model, as soon as Monday, according to a person familiar with the plan.\n\nThe organization has changed their name on HF from THUDM to zai-org and they have a GLM 4.5 collection which has 8 hidden items in it.\n\n<url>",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Macbook bros, we eating good this week\nM4 pro has almost doubled the maximum RAM configuration from M3 pro. From that alone we can extrapolate another doubling for M3 Max -> M4 Max leading to 256 GB max ram. And maybe even 512 GB max ram for M4 Ultra. I think the larger local models will become much more accessible and hope Apple does more work to develop MLX and make it even more attractive to utilize local models on their hardware. The ROI on getting apple hardware for local inference seems the highest as of now.",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "I really like the \"Murderers in a field\" question\no1, deepseek-r1 definitely solves this question.\nFuseO1-DeepSeekR1-QwQ-SkyT1-Flash-32B-Preview-Q4_K_M was also able to solve this question with temperature 0.6. First local model that solved this question. Interesting!\n# Quantitative Analyst Interview Question\n## Murderers in a field\nYou are guarding 100 murderers in a field, and you have a gun with a single bullet. If any one of the murderers has a non-zero probability of surviving, he will attempt to escape. If a murderer is certain of death, he will not attempt an escape. How do you stop them from escaping?",
+      "gold": "analysis",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Okay, I love arguing with me LocalLaMA and feeling like I'm winning. Am I strange?\nI feel I can easily tie it in inconsistencies and knots with basic debating techniques (e.g. false binary's).\nDon't make me feel alone...",
+      "gold": "reaction",
+      "predicted": "announcement"
+    },
+    {
+      "text": "I feel like I finally graduated.\nI finally made the move from LM Studio to vLLM thanks to this post https://www.reddit.com/r/LocalLLaMA/s/NmS9CgHvqz. I may not know what it all means yet but I\u2019m going to start diving into the docs to learn as much as I can.\nI\u2019m running an endpoint on each of my 3090s one for chat and one for subagents. This has made qwen3.8\u2019s reasoning bearable because of the increase to 143tok/s. Thank you to Syv-ai. His repo is here https://github.com/syv-ai/qwen38-27b-rtx3090.\nvLLM feels like I\u2019m finally using my hardware to its full potential, but the craziest thing is my waterblocked GPUs don\u2019t go above 35\u00b0C before they were hitting 70\u00b0C on hard workflows.\nSorry I didn\u2019t have time to ask qwen to write or edit this post for me.\ntl;dr vLLm it feels good man",
+      "gold": "reaction",
+      "predicted": "announcement"
+    },
+    {
+      "text": "LLM logic in TF2 meet the spy\n\n\nWhat happens at the beginning of the meet the spy TF2 clip reminded me of LLMs :D\n\nHere is the link: <url>",
+      "gold": "reaction",
+      "predicted": "announcement"
+    },
+    {
+      "text": "I bought a modded 4090 48GB in Shenzhen. This is my story.\nA few years ago, before ChatGPT became popular, I managed to score a Tesla P40 on eBay for around $150 shipped. With a few tweaks, I installed it in a Supermicro chassis. At the time, I was mostly working on video compression and simulation. It worked, but the card consistently climbed to 85\u00b0C.\nWhen DeepSeek was released, I was impressed and installed Ollama in a container. With 24GB of VRAM, it worked\u2014but slowly. After trying Stable Diffusion, it became clear that an upgrade was necessary.\nThe main issue was finding a modern GPU that could actually fit in the server chassis. Standard 4090/5090 cards are designed for desktops: they're too large, and the power plug is inconveniently placed on top. After watching the LTT video featuring a modded 4090 with 48GB (and a follow-up from Gamers Nexus), I started searching the only place I knew might have one: Alibaba.com.\nI contacted a seller and got a quote: CNY 22,900. Pricey, but cheaper than expected. However, Alibaba enforces VAT collection, and I\u2019ve had bad experiences with DHL\u2014there was a non-zero chance I\u2019d be charged twice for taxes. I was already over \u20ac700 in taxes and fees.\nJust for fun, I checked [Trip.com](http://trip.com/) and realized that for the same amount of money, I could fly to Hong Kong and back, with a few days to explore. After confirming with the seller that they\u2019d meet me at their business location, I booked a flight and an Airbnb in Hong Kong.\nFor context, I don\u2019t speak Chinese at all. Finding the place using a Chinese address was tricky. Google Maps is useless in China, Apple Maps gave some clues, and Baidu Maps was beyond my skill level. With a little help from DeepSeek, I decoded the address and located the place in an industrial estate outside the city center. Thanks to Shenzhen\u2019s extensive metro network, I didn\u2019t need a taxi.\nAfter arriving, the manager congratulated me for being the first foreigner to find them unassisted. I was given the card from a large batch\u2014they\u2019re clearly producing these in volume at a factory elsewhere in town (I was proudly shown videos of the assembly line). I asked them to retest the card so I could verify its authenticity.\nDuring the office tour, it was clear that their next frontier is repurposing old mining cards. I saw a large collection of NVIDIA Ampere mining GPUs. I was also told that modded 5090s with over 96GB of VRAM are in development.\nAfter the test was completed, I paid in cash (a lot of banknotes!) and returned to Hong Kong with my new purchase.",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I built an offline-first voice AI with <1 s latency on my Mac M3\nOffline-first voice AI built with **FastAPI WebSocket + MLX**, running locally on **M3 Pro**.\n\n**<1 s speech-to-speech latency** using:\n\u2022 **silero-vad v6** + **pipecat-ai/smart-turn-v3** \u2192 fastest VAD + turn detection\n\u2022 **mlx-community/whisper-small.en-mlx-q4** \u2192 sentence-wise real-time STT\n\u2022 **mlx-community/LFM2-1.2B-4bit** (LLM) + **hexgrad/Kokoro-82M** (TTS) \u2192 fully parallel inference\n\n**Optimizations for <1 s:**\n1\ufe0f\u20e3 Pre-warm all models\n2\ufe0f\u20e3 Parallel **LLM + TTS** (generate + speak per sentence)\n3\ufe0f\u20e3 Fastest VAD + smart-turn-3 for real-time segmentation\n\nYoutube Demo <url>\nGtihub Repo <url>",
+      "gold": "analysis",
+      "predicted": "announcement"
+    },
+    {
+      "text": "SmolVLM2 it's the dumbest shit I ever seen.\nMaybe a monkey can be smatter.",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Command R+ becomes first open model to beat GPT-4 on LMSys leaderboard!\nNot only one version, but actually 2 versions of GPT-4 it beats! It beats GPT-4-0613 and GPT-4-0314.",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Mistral Nemo is uncensored\nMistral Nemo has been overlooked by the recent release of Llama 3.1, but it is highly performant model that is also incredibly uncensored. According to the UGI leaderboard <url>, it surpasses all of the other ~13b models. Surprisingly, the instruct model is more uncensored than the base model instead of the reverse. There aren't much benchmarks online with the model yet, but given Mistral's track record it's safe to say it will punch well above its weight and compete against larger models.",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "chinese hardware\nas far as hardware we currently have options such as nvidia, amd, apple, etc.\nhowever it feels like these are more on the expensive side.\npersonaly i own bosgame m5 strixhalo and so far its good. i was thinking of upgrade, but it seems to me that the next step will be chinese hardware vendors, stuff like huawei, xiaomi etc. maybe in the next 1-2 years.",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Strata - Windows - working dual AMD GPU setup with VISION !\nHi, just want to say that i ran strata on Windows 11 with layer split on dual AMD GPUs 9070XT and 9060XT, 14900KF processor and 64GB RAM.\nOnly problem i encountered was that without \"STRATA_RESIDENT_PIN\": \"0\" it crashed, but with this env on it was running fine, though it was having a little overhead and slowdown.\nFinally i settled on single card setup 9070XT with ~1350pp and around ~50-100 tgs (depending on task) at full ctx, qwen sampling and IQ3_XXS quant.\nAlso i compiled vulkan vision and run vision mmproj on my second card all on Windows without any problems.\nConfig is here:\n\n```\n{\n \"exe\": \"E:\\\\Strata\\\\engine\\\\strata.exe\",\n \"args\": [\n  \"--pack\",\n  \"C:\\\\Strata-data\\\\packs\\\\iq3_xxs\",\n  \"--native\",\n  \"C:\\\\Strata-data\\\\models\\\\IQ3_XXS\\\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf\",\n  \"--ple-gguf\",\n  \"C:\\\\Strata-data\\\\models\\\\IQ3_XXS\\\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf\",\n  \"--expert-profile\",\n  \"E:\\\\Strata\\\\data\\\\expert-profile.bin\",\n  \"--expert-cache\",\n  \"auto\",\n  \"--prefill\",\n  \"auto\",\n  \"--spec\",\n  \"4\",\n  \"--spec-min-p\",\n  \"0.5\",\n  \"--mtp\",\n  \"C:\\\\Strata-data\\\\mtp\\\\rt\",\n  \"--max-context\",\n  \"262144\",\n  \"--kv\",\n  \"int8\",\n  \"--resident-experts\",\n  \"--pool-workers\",\n  \"15\",\n  \"--vram-reserve-mib\", \"2300\",\n  \"--kv-resident\",\n  \"32768\"\n ],\n \"cwd\": \"E:\\\\Strata\",\n \"tokenizer\": \"C:\\\\Strata-data\\\\packs\\\\iq3_xxs\\\\tokenizer\",\n \"model_name\": \"qwen3.8-flash-next-iq3_xxs\",\n \"log\": \"E:\\\\Strata\\\\strata-iq3_xxs.log\",\n \"lib_dirs\": [\n  \"E:\\\\Strata\\\\engine\\\\rocm\\\\bin\"\n ],\n \"port\": 8080,\n \"backend\": \"hip\",\n \"env\": {\n  \"GGML_VK_VISIBLE_DEVICES\": \"1\",\n  \"STRATA_PREFILL_CPU_SHARE\" : \"auto\",\n  \"STRATA_STAGER_THREADS\": \"8\",\n  \"STRATA_PF_FUSED\": \"1\",\n  \"STRATA_PF_GEMM\" : \"1\",\n  \"STRATA_HIP_WMMA\": \"1\",\n  \"STRATA_HIPBLASLT_TUNING\": \"E:\\\\Strata\\\\tools\\\\hip\\\\gfx1201-hipblaslt-100500.txt\",\n  \"STRATA_IQ256_GATHER\": \"1\"\n },\n \"sampling\": {\n  \"temperature\": 1.0,\n  \"top_p\": 0.95,\n  \"top_k\": 20,\n  \"min_p\": 0.0\n },\n \"vision\": {\n  \"exe\": \"E:\\\\Strata\\\\build-vision-vk\\\\bin\\\\strata-vision.exe\",\n  \"mmproj\": \"C:\\\\Strata-data\\\\models\\\\IQ3_XXS\\\\mmproj-Qwen3.8-Flash-Next-BF16.gguf\",\n  \"model\": \"C:\\\\Strata-data\\\\models\\\\IQ3_XXS\\\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf\",\n  \"gpu\": true,\n  \"max_tokens\": 1024\n },\n \"gpu\": \"1\",\n \"gpu_order\": \"as_given\",\n \"gpus_asked\": true\n}\n```\n\nOfficially windows isnt supported for dual amd gpus, vision on windows also not supported, both run fine on my setup without any modifications to the strata code.\nGood job team.",
+      "gold": "analysis",
+      "predicted": "announcement"
+    },
+    {
+      "text": "0xSero/Kimi-K2.5-PRISM-REAP-72 \u00b7 Hugging Face\nKimi K2.5 in just 200B, we definitely need a GGUF :)",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "MultiverseComputingCAI/HyperNova-60B \u00b7 Hugging Face\n**HyperNova 60B** base architecture is `gpt-oss-120b` <url>.\n\n* 59B parameters with 4.8B active parameters\n* MXFP4 quantization\n* Configurable reasoning effort (low, medium, high)\n* GPU usage of less than 40GB",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Qwen3-Next-80B-A3B-Thinking-GGUF has just been released on HuggingFace\n\n\nTested q4_k_m. It did the best Tetris in a single HTML file I've ever seen. I tried Devstral recently and the results weren't as accurate.",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Local llms works great!\nI am using qwen3:14b it works well for my day to day life and reducing my online llm dependencies. Like you can see in both screenshot I got almost equilant result",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "[Paper] Embeddings Are Overpriced? A Frozen 16 MB Vocabulary for Small and Ternary Language Models\nIn a small language model the vocabulary is the single largest part. In Gemma 3 270M the embedding table holds 168M of 268M parameters, and because quantisation methods leave the embedding in 16-bit, it is also most of the file once the rest of the model is compressed. We ask what that table actually buys. We replace it with one frozen table of 512-bit codes, 16 MB, with no trainable parameters, derived once from a pretrained embedding by principal-component projection and sign binarisation, and we train the same Gemma-shaped body from scratch on the same 2.05B tokens with and without it. The learned table buys 0.20 nats of validation loss for 2.6 times the trainable parameters, but on LAMBADA, HellaSwag and PIQA the frozen-table model is better or tied; only ARC-Easy favours the learned table. With a ternary BitNet b1.58 body the whole model is a 46 MB file, still ties the float model on LAMBADA and PIQA, and on a laptop CPU generates 615 to 740 tokens per second in 62 MB of memory, five to six times the speed of the float model's 8-bit GGUF in llama.cpp at a seventh of the memory. The frozen table wins by 1.7 to 2.3 nats on rare words, accepts 10,000 new words after training with a 3% cost where the learned table collapses by 43%, and all of it is released with the weights, the data and every evaluation answer.\n\narXiv : https://arxiv.org/abs/2610.22428\nPDF : https://arxiv.org/pdf/2610.22428\nGitHub : https://github.com/QLNI\nHuggingFace : https://huggingface.co/QLNI/embeddings-are-overpriced",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I tried fine-tuning Gemma-3-270m and prepared for deployments\nGoogle recently released Gemma3-270M model, which is one of the smallest open models out there.\nModel weights are available on Hugging Face and its size is ~550MB and there were some testing where it was being used on phones.\nIt\u2019s one of the perfect models for fine-tuning, so I put it to the test using the official Colab notebook and an NPC game dataset.\nI put everything together as a written guide in my newsletter and also as a small demo video while performing the steps.\nI have skipped the fine-tuning part in the guide because you can find the official notebook on the release blog to test using Hugging Face Transformers. I did the same locally on my notebook.\nGemma3-270M is so small that fine-tuning and testing were finished in just a few minutes (~15). Then I used a open source tool called KitOps to package it together for secure production deployments.\nI was trying to see if fine-tuning this small model is fast and efficient enough to be used in production environments or not. The steps I covered are mainly for devs looking for secure deployment of these small models for real apps. (example covered is very basic and done on Mac mini M4)\nSteps I took are:\n\n* Importing a Hugging Face Model\n* Fine-Tuning the Model\n* Initializing the Model with KitOps\n* Packaging the model and related files after fine-tuning\n* Push to a Hub to get security scans done and container deployments.",
+      "gold": "announcement",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "StepFun is preparing a \"bigger surprise\" for Chinese New Year, and will also release Step-3.5-Flash-Base.\n<url>",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Finally InternVL3_5 Flash versions coming\nnot available but created on <url>",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "1 million context is the scam , the ai start hallucinating after the 90k . im using the qwen cli and its become trash after 10 percent context window used\nthis is the major weakness ai have and they will never bring this on the benchmark , if u r working on the codebase the ai will work like a monster for the first 100k context aftert that its become the ass",
+      "gold": "hot_take",
+      "predicted": "announcement"
+    },
+    {
+      "text": "NVIDIA Releases Nemotron Nano 2 AI Models\n\u2022 6X faster than similarly sized models, while also being more accurate\n\n\u2022 NVIDIA is also releasing most of the data they used to create it, including the pretraining corpus\n\n\u2022 The hybrid Mamba-Transformer architecture supports 128K context length on single GPU.\n\nFull research paper here: <url>",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Z.ai is dominating Hugging Face Trending model list !!\nMultiple zai-org models across vision, speech, and multimodal in the top list.",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "I made browserllama, an open-source web extension that lets you summarize and chat with webpages using local llms.\nBrowserLlama is a browser extension that lets you summarize and chat with any webpage using a locally running Language model. It currently requires windows 10/11 to function.\n\nCheck it out let me know what you think!\n\nGithub: <url> Chrome web store link: <url> Firefox addon-store link: <url>",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "I did not realize how easy and accessible local LLMs are with models like Qwen3 4b on pure CPU.\nI hadn't tried running LLMs on my laptop until today. I thought CPUs were too slow and getting the old igpu working (AMD 4650U, so Vega something) would be driver hell. So I never bothered.\nOn a lark, I downloaded LM Studio, downloaded Qwen3 4b q4, and I was getting 5 tok/sec generation with no hassle at all with the automatic Vulkan setup. Not bad. It was impressive but a little slow. Then, just to be sure, I disabled the GPU and was surprised to get 10 tok/sec generation with CPU only! Wow! Very usable.\nI had this project in mind where I would set up a smart station for home in the kitchen, somewhere to collect emails, calendar events, shopping lists, then just sort, label, summarize and display schedules and reminders as appropriate. The LLM just needs to normalize messy input, summarize, and classify text. I had been considering getting a miniPC with a ton of RAM, trying to figure out what's the minimum spec I need, what kind of expense to keep this powered 24/7, where to stick the monitor in the cramped kitchen, and so forth. Would it be worth the cost or not.\nBut I did some testing and Qwen3 4b is pretty good for my purposes. This means I can just buy any used laptop off ebay, install linux, and go wild??? It has a built in monitor, low power draw, everything for $200-300? My laptop only has DDR4-3200, so anything at that speed or above should be golden. Since async processing is fine I could do even more if I dared. Maybe throw in whisper.\nThis is amazing.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I made a gpt-oss finetuned model\nprint(\"I'm sorry, I can't help with that\")\n\nit's safemaxxed, try it on safety benchmarks",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Thread on running Gemma 2 correctly with hf\nThread on running Gemma 2 within the HF ecosystem with equal results to the Google AI Studio: <url> TLDR:\n\n* Bugs were fixed and released on Friday in v4.42.3\n* Soft capping of logits in the attention was particularly important for inference with the 27B model (not so much with the 9B)\n* Precision is especially important: FP32, BF16 seem ok, but FP16 isn't working nicely with the 27B. Using bitsandbytes with 4-bit and 8-bit seem to work correctly.",
+      "gold": "announcement",
+      "predicted": "announcement"
+    },
+    {
+      "text": "Maybe anecdotal but I have very high hopes for Yi 34b finetunes.\nI tried one yesterday, specifically brucethemoose/Capybara-Tess-Yi-34B-200K-exl2-4bpw-fiction, for the first time and I came away very impressed. It's not great (yet) for RP but the basis seems very robust. For a laugh, I tried the usual reasoning tests and damn, it passed them all first try:\nAI\nHow can I help you today?\nYou\nThere is a room with three murderers inside. Another person enters the room and shoots one of the three original occupants dead. Nobody else enters or leaves the room. How many murderers are there in the room?\nAI\nFour. Three original occupants who were already murderers and the fourth being the new person who entered the room and killed one of them.</s>\nYou\nI buy ten apples at the market. I give two of them to my friend Bob and two to my mother. Then, I go back to the market and buy three more apples. On my way home, I eat one apple. At home, I give my brother three bananas. How many apples do I have left. Explain your reasoning step by step.\nAI\nLet's break it down step-by-step:\nYou start with 10 apples.\nYou give away 2 apples to Bob (leaving you with 8 apples) and then give away another 2 apples to your mother (leaving you with 6 apples).\nNext, you purchase 3 additional apples from the market, bringing your total up to 9 apples again.\nWhile on your way home, you consume 1 apple, leaving you with 8 apples remaining.\nFinally, when you reach home, you give your brother 3 bananas - but this doesn't affect the number of apples you have, since they are different fruits. So, you still have 8 apples left.</s>\nYou\nSally has five brothers. Each of her brothers has one sister. How many sisters does Sally have. Explain youur reasoning step by step.\nAI\nHere's how we can reason through this problem:\nSally has five brothers.\nIt states that each of her brothers has one sister.\nSince all these siblings belong to the same family, it means that Sally is the only sister mentioned for those five brothers.\nTherefore, Sally has no other sisters besides herself.\nSo, Sally has 0 sisters </s>\nLike, seriously? Huge context, really fast (on my 3090 anyway) and this level of performance. I can't wait to see what people can do with this.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    }
+  ]
+}

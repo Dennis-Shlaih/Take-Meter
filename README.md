@@ -154,9 +154,9 @@ A post is `analysis` only if the post text itself states a relevant, checkable d
 
 **Base model:** distilbert-base-uncased
 
-**Settings:** 3 epochs, learning rate 2e-5, batch size 16, maximum sequence length 128, seed 42.
+**Settings:** 8 epochs, learning rate 2e-5, batch size 16, maximum sequence length 128, seed 42.
 
-**Anything I changed from the defaults, and why:** I updated the label list to include all four categories in my dataset: analysis, announcement, hot_take, and reaction. I kept the other training settings at their provided defaults to establish a baseline before experimenting with hyperparameters.
+**Anything I changed from the defaults, and why:** I updated the label list to include all four categories in my dataset: analysis, announcement, hot_take, and reaction. I kept the other training settings at their provided defaults to establish a baseline before experimenting with hyperparameters, with the exception of the number of epochs. There was a real risk of underfit, and the model mostly predicting announcement, as per the data and Claude's prediction based on my choices.
 
 Split sizes: To be filled in after running the notebook's train/validation/test split. I will record the number of examples in each split and the per-label counts in the test set. 
 
@@ -193,24 +193,49 @@ I used AI to pre-label the candidate posts. For my last few batches candidates c
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.406 | 0.594 | +0.188 |
+| Macro F1 | 0.212 | 0.457 | +0.245 |
+| F1 — `analysis` | 0.250 | 0.667 | +0.417 |
+| F1 — `announcement` | 0.600 | 0.733 | +0.133 |
+| F1 — `hot_take` | 0.000 | 0.429 | +0.429 |
+| F1 — `reaction` | 0.000 | 0.000 | +0.000 |
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+
+Before seeing the trained numbers, I predicted that the trained model would have the most noticeable improvement on `analysis` and `hot_take`, since fine-tuning on labeled examples should help it distinguish evidence-based technical reasoning from unsupported opinions. I also expected some improvement on `announcement`, but I was less certain about `reaction` because it had fewer examples.
 
 **What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+
+Fine-tuning improved overall accuracy by **0.188** and macro F1 by **0.245** compared with the baseline. The largest improvement was for `hot_take` (+0.429 F1), followed by `analysis` (+0.417). This suggests that fine-tuning helped the model learn distinctions that the general-purpose baseline struggled with, especially identifying unsupported judgments and evidence-based reasoning. The `announcement` F1 also improved by 0.133.
+
+However, `reaction` F1 remained at 0.000, so fine-tuning did not improve performance across every label. The results suggest that task-specific examples helped, but the model still struggles to recognize reactions. Overall, fine-tuning added measurable value, although the remaining per-label weakness shows that better overall performance does not mean the classifier handles all four categories reliably.
+
+## Run Log — Before
+# Everything this notebook needs is already in requirements.txt — you installed
+# it when you set the project up. This cell just says what you're running on.
+
+ prints one ready to paste.
+     An image of a matrix earns nothing. -->
+
+| true \ predicted | analysis | anouncement | hot_take | reaction
+|---|---|---|---|---|
+| analysis | 5 | 1 | 1 | 0
+| anouncement | 1 | 11 | 1 | 0
+| hot_take | 1 | 3 | 3 | 0
+| reaction | 1 | 2 | 2 | 0
+
+**My biggest off-diagonal number, and what it means:**
+
+The largest off-diagonal count was 3 true hot_take posts predicted as announcement. This suggests the model sometimes treated unsupported opinions or judgments as announcements rather than recognizing that the post was primarily expressing an unsupported claim. The same number of reaction posts were also misclassified as announcement (2) and hot_take (2), showing that the model struggled to distinguish reactions from the other categories. Most notably, it predicted zero posts as reaction, missing all 5 true reaction posts.
 
 
 
 ---
 
-## Run Log — Before
+## Verdicts and Diagnoses
+device: cpu  (CPU)
+torch:  2.14.1+cu130
+
 
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
@@ -225,26 +250,7 @@ I used AI to pre-label the candidate posts. For my last few batches candidates c
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
-
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
-
-**My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
-
-
-
----
-
-## Verdicts and Diagnoses
-
+<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
