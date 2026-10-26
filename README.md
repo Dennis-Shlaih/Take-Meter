@@ -246,13 +246,13 @@ However, `reaction` F1 remained at 0.000, so fine-tuning did not improve perform
 <!-- MET or MISSED against LAST WEEK's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| # | Criterion | Target | Verdict | How I decided |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| Criterion | Target | Seed 1 | Seed 2 | Seed 3 | Verdict |
+|---|---|---|---|---|---|
+| 1. Overall accuracy | ≥ 0.65 | 0.594 | 0.531 | 0.594 | MISSED |
+| 2. Per-label F1 | ≥ 0.55; reaction ≥ 0.45 | hot_take 0.429; reaction 0.000 | analysis 0.500; hot_take 0.167; reaction 0.000 | hot_take 0.444; reaction 0.000 | MISSED |
+| 3. Confusion boundary | Both rates ≤ 25% | 14.3% / 14.3% | 57.1% / 14.3% | 0% / 0% | MISSED |
+| 4. Dataset balance | N/A | N/A | N/A | N/A | MET |
+| 5. Label consistency | ≥ 80% agreement on 30 blind relabels | 0.63 | 0.59 | 0.66 | MISSED |
 
 
 **Diagnoses**
