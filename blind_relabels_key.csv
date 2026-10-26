@@ -1,0 +1,224 @@
+text,original_label
+"Rethinking Priorities: Processing Power vs. Research Budget in AI Development
+Why are big companies only thinking about improving processing power instead of increasing the research budget to build optimal models?  I mean, now a 7b q5 model can give almost the accuracy of a multi-million dollar model!
+
+No matter how much technology advances in the next few years, we will not be able to bring the power of nvidia titan to mobile phones!",hot_take
+"I made browserllama, an open-source web extension that lets you summarize and chat with webpages using local llms.
+BrowserLlama is a browser extension that lets you summarize and chat with any webpage using a locally running Language model. It currently requires windows 10/11 to function.
+
+Check it out let me know what you think!
+
+Github: <url> Chrome web store link: <url> Firefox addon-store link: <url>",announcement
+"I absolutely hate how some ""tech"" bros are creating an unnecessary hate hype against AI
+In 2 Months, The A.I Bubble Will Catastrophically Burst.
+
+AI Scientists Think There’s A Monster Inside ChatGPT
+
+The above are just 2 are just examples of types of videos I'm talking about. I especially don't like the creator of 1st video. That guy seems to hate literally everything. Every time I get a video recommended from his channel it's titled something like ""I hate this"", ""I hate that"", ""I hate him"", ""I hate her"".
+
+It's so annoying how these ""tech"" bros are creating an unnecessary hate hype against AI. I don't recommend watching any of these videos. You'll just waste your time watching them.
+
+I'm not denying that AI companies such as OpenAI are doing things which are hurting people in many ways such as imo unnecessarily huge data centers but my point is AI is a tech. I'm not denying that a bubble does exist but if anyone is to blame for damages done, it's us humans not that lifeless product of human creativity.
+
+I personally think these AI companies should focus more on building smaller yet smarter AI models while also developing better hardware so that people can run it on their devices, rather than accessing it from some huge data center. However Google, OpenAI or any other major AI lab won't open source their top models for several obvious reasons.
+
+Many people, such as creators of those videos liked above, don't really understand what AI actually is. For them AI is just LLMs. LLM = AI, AI = LLM. That's all they know. Just tell them about AlphaGo, AlphaFold or Google uses AI for search (not AI mode or AI overview) and they'll get enraged like crazy. I've seen so many people linking to these videos saying things like ""AI is going to destroy the entire world"", ""I don't use AI at all"", ""Cancel AI"" and stuff.
+
+Many of that anger is justified cuz of companies stealing data without properly crediting and paying original authors.
+
+Plagiarism is also a topic where many people say that ""AI can never learn"" while others say ""If I quote a line of Dutch from RDR2 after listening it on a youtube video with an adblocker, am I plagiarizing or stealing that dialogue as well?"", while some other people argue ""We humans directly or indirectly somewhat rely on plagiarism and stealing to learn as well"".
+
+Most people think of AI is ""just a next word predictor"". Yeah your chess engine is predicting the next words, sure buddy. But it's not their fault. Generally such creators just use AI as a synonym for LLM which actually clarifying anything. Most of these people and these creators won't even know that simple decision trees are AI as well.
+
+These tech bros are portraying this technology as a ""damaging humanity"", ""killing the world"" which ever clarifying that their channels and many others are running because of this technology. They say AI will take over all their jobs however it seems AI has actually as of now created more jobs, specially self-employed jobs as far as I know and understand.
+
+They are using fear and people lack of knowledge of this tech to create a hate hype train unnecessarily scare people, damage the image of this technology which can cause many potentially brilliant people to not work on it at all and slow down the progress. And what are they getting out of it? A lot of money. These creators are making too much money because of AI both as a topic and the algorithm pushing the videos.
+
+It's so annoying. Every time I see a post about AI on Instagram the comment section is like ""Say no to AI"", ""AI can't learn"", ""Life was good when 5 years ago AI wasn't real"".
+
+Such a mess. All of it is just so annoying. I can't really defend this tech anymore from those people who aren't willing to do their own research and are just watching these pseudo-science, what-if-this-happened type videos. Neither can I stop my youtube and instagram algorithm from recommending me that stuff. Negativity and stupidity moves and spreads a lot faster than the speed of light.
+
+This was just me dumping my thoughts on the entire situation. I might later add more parts and better clarification if I feel like.
+
+Thanks :)",hot_take
+"I haven't felt so memory poor in a couple of decades
+Come on Intel, AMD, nVidia, system builders, anybody else. Hurry up and take my money for 128 GB of neural net memory. $4K? Slow, don't care as long as it is at least 1 token per second?",reaction
+"Upgraded my rig
+Finally decided to upgrade my gpu rig. From i3-8100 upgraded to epyc 7302p, need to clean my old gear and sell it.
+Epyc 7302p, found someone discussed about an eBay seller. Saw a 80 bucks 7232p and i liked the low power consumption of it but i dont like its reduced memory bandwidth. So added some dollar go for 7302p. Bought a cpu cooler from that guy then realized it’s 4pin and fan header on the new board is 6pin, managed to get it plugged and worked.
+Hynix ddr4 3200 8x32g, was struggling between 2666, 2933, eventually found a eBay seller who sell each less than $50
+Bought a romed8-2t from Newegg for 600$
+In total $1100 which is quite happy about it. Let me recall my first pc my Dad bought me which was a Celeron which was almost same price but that was before 2000.
+Tried last night, all memory works fine. CPU temperature keeps at 25c.
+Tried llama cpp on 7b model with cblis on 14 cores that’s 25 tokens/s. Not sure whether that’s good or not, will try 70b and 200b tonight",reaction
+"After a week of trying many models for fiction writing, Gemma 4 26B A4B IT (Heretic) is the first one which feels actually capable.
+In the very early days I was able to finetune a gen 1 llama base model on my own writing, but I wanted to avoid setting that all up again and was hoping that I could instruct a more modern model into writing what I want.
+However every model which could fit on my GPU which I tried was a disappointment, even though they were widely praised as the best. Short contexts, frequent incoherency, not grasping the prompt, not grasping the subtleties of example text snippets, etc.
+I was about to give up, but decided whatever I'll try an 'unlocked' version of the new Gemma models even though I expected that it would be bad due to the original training dataset being overly focused on math and 'safe' corporate content. And holy hell, I finally found a model which just works, and works incredibly well. There's a chance it might have included some of my own writing in some capacity which is out there across the web going back a few decades, since it locks right onto my style, themes, settings, etc. However when I query it for any specifics it doesn't seem to know them, so I don't think that's the case.
+I suspect that I'll be renting some cloud processing for the first time ever to finetune this soon and make it even better. But even out of the box it's extremely capable. If anybody is looking for a strong local writing model, Gemma 4 is amazing. I used the following recommended creative writing settings, where I could find equivalents in LM Studio.
+https://huggingface.co/nohurry/gemma-4-26B-A4B-it-heretic-GUFF",hot_take
+"Local llms works great!
+I am using qwen3:14b it works well for my day to day life and reducing my online llm dependencies. Like you can see in both screenshot I got almost equilant result",hot_take
+"I am VERY impressed by qwen3 4B (q8q4 gguf version)
+I usually test models reasoning using a few ""not in any dataset"" logic problems.
+
+Up until the thinking models came along, only ""huge"" models could solve ""some"" of those problems in one shot.
+
+Today I wanted to see how a heavily quantized (q8q4) small model as Qwen3 4B performed.
+
+To my surprise, it gave the right answer and even the thinking was linear and very good.
+
+You can find my quants here: <url>",hot_take
+"OK, fine, Qwen 3.8 Flash Next is nice
+I held off as long as I could, but finally gave in and set up strata.
+I am pretty blown away. 3.8 27b at Q6 kv8 was my driver before and that works super well, but Flash Next in strata IQ4 xs is really winning me over.
+Its not perfect, but it feels like models I was using professionally last year, which were/are good enough to do just about anything.
+You all are a bad influence.",reaction
+"The SRE’s Guide to High Availability Open WebUI Deployment Architecture
+Based on my real world experiences running Open WebUI for thousands of concurrent users, this guide covers the best practices for deploying stateless Open WebUI containers (Kubernetes Pods, Swarm services, ECS etc), Redis and external embeddings, vector databases and put all that behind a load balancer that understands long-lived WebSocket upgrades.
+
+When you’re ready to graduate from single container deployment to a distributed HA architecture for Open WebUI, this is where you should start!",announcement
+"GLM 4.5 possibly releasing today according to Bloomberg
+Bloomberg writes:
+
+>The startup will release GLM-4.5, an update to its flagship model, as soon as Monday, according to a person familiar with the plan.
+
+The organization has changed their name on HF from THUDM to zai-org and they have a GLM 4.5 collection which has 8 hidden items in it.
+
+<url>",announcement
+"Mixtral: A Promising Model with Unforeseen Challenges
+I was able to spend significant time yesterday testing Mistral in a plethora of ways. If you go into it with high hopes off the bat, you are going to be disappointed. Just putting that out there upfront. There are bugs with this model. Why are those bugs there though, and are they fixable? Possibly, possibly not. This is the first time a model of this size with this architecture has been released for pure testing purposes. I do not know.
+One of the most concerning issues is the model's apparent ""AI Multiple Personality Disorder."" This phenomenon manifests as inconsistencies in the responses generated by different component models, leading to incoherent and unreliable outputs. This inconsistency is particularly pronounced when the model is presented with challenging questions, where it often performs worse than other LLM models.
+While the exact cause of this inconsistency remains unclear, it's likely to be linked to several factors. The training data used for Mixtral may not have adequately addressed such scenarios, leading the models to be unprepared for them. Additionally, the controller, responsible for selecting the appropriate model for each query, may not be sophisticated enough to consistently make optimal decisions.
+Furthermore, I do not know how the developer's setup the model's encoder/decoder configuration, which hinders a deeper understanding of its behavior. As an experienced MoE developer, I can attest that even minor changes in this configuration can have drastic effects on the model's performance. Without this information, it's impossible to definitively assess Mixtral's potential and potential pathways for improvement.
+Despite these challenges, Mixtral's release marks a significant milestone in the development of MoE-based LLMs. It provides invaluable data and insights that can guide future research and development efforts. It's crucial to remember that Mixtral is still in its early stages of development and should be treated as a test model. More research is needed to fully understand its capabilities and limitations, optimize its performance, and ensure its reliability and consistency.
+Bottom line, I am writing this because I am afraid people are going to use the model, think it is utter trash, and move on, while trashing it. As someone who has actually played around with MoE's pretty extensively, I have solved problems that Mixtral is currently displaying by adding literally one line of code to the encoder/decoder.
+Is that all Mixtral needs? I do not know; I do not possess a personal server to test these things on that level to where I can actually play around with the backend of this model and stand it up. It is going to take time to do research with this model. MoE's are weird. You have to fine tune every single aspect of them. These things will take time to research out. Please, just don't trash the overall architecture as a knee jerk reaction. More testing is needed.",hot_take
+"Extensive open source RAG tutorials is getting viral
+Hi all,
+
+Sharing a repo I was working on for a while.
+
+It’s open-source and includes many different strategies for RAG (currently 23), including tutorials, and visualizations.
+
+This is great learning and reference material.
+Open issues, suggest more strategies, and use as needed.
+
+It got very popular - 5K stars within a month!
+
+Enjoy!",announcement
+"Thread on running Gemma 2 correctly with hf
+Thread on running Gemma 2 within the HF ecosystem with equal results to the Google AI Studio: <url> TLDR:
+
+* Bugs were fixed and released on Friday in v4.42.3
+* Soft capping of logits in the attention was particularly important for inference with the 27B model (not so much with the 9B)
+* Precision is especially important: FP32, BF16 seem ok, but FP16 isn't working nicely with the 27B. Using bitsandbytes with 4-bit and 8-bit seem to work correctly.",announcement
+"Qwen3 pull request sent to llama.cpp
+The pull request has been created by bozheng-hit, who also sent the patches for qwen3 support in transformers.
+
+It's approved and ready for merging.
+
+Qwen 3 is near.
+
+<url>",announcement
+"Kimi K2.5 is No.1 in the Design Arena, beating Gemini 3 Pro and Claude Opus 4.5
+
+
+It matches my experience. K2.5 can always one-shot a very stunning webpage",announcement
+"Being skeptical of benchmarks and leaderboards but without solid evidence claiming that companies are rigging benchmarks and leaderboards should be avoided.
+I think we should instead focus on the inadequacies of benchmarks and leaderboards instead of without evidence blaming companies.",hot_take
+"Nvidia Parakeet-Realtime-EOU-120m-v1
+Parakeet-Realtime-EOU-120m-v1 is a streaming speech recognition model that also performs end-of-utterance (EOU) detection. It achieves low latency (80ms~160 ms) and signals EOU by emitting an <EOU> token at the end of each utterance. The model supports only English and does not output punctuation or capitalization.",announcement
+"AMA With Z.AI, The Lab Behind GLM Models
+# AMA with Z.AI — The Lab Behind GLM Models. Ask Us Anything!
+
+Hi r/LocalLLaMA 👋
+
+Today we are having **Z.AI**, the research lab behind the **GLM family of models**. We’re excited to have them open up and answer your questions directly.
+
+Our participants today:
+
+* **u/zixuanlimit** <url>
+* **u/Maximum_Can9140** <url>
+* **u/zxdu** <url>
+* **u/Sengxian** <url>",announcement
+"Know the capabilities of your models before coding a big project
+I spent a bunch of time creating scripts that can take base64 strings of encoded PDFs, converting them to PDFs in memory, OCRing the text, then funneling that text to a local AI model for summarizing and categorizing. Well guess what, the Gemma family of models, and probably others, can just take a 100,000 character base 64 string, decode it in memory and summarize the text, with no plugins needed. What the hell lol",analysis
+"chinese hardware
+as far as hardware we currently have options such as nvidia, amd, apple, etc.
+however it feels like these are more on the expensive side.
+personaly i own bosgame m5 strixhalo and so far its good. i was thinking of upgrade, but it seems to me that the next step will be chinese hardware vendors, stuff like huawei, xiaomi etc. maybe in the next 1-2 years.",hot_take
+"Qwen3.8-Flash-Next vs Opus 5.5: Six-way benchmark on a real Rust feature with Claude Code and Pi
+Reposting again since original post got removed by Reddit for some reason (I have no idea why)
+
+A few of you pointed out in my last post that comparing Flash-Next and Opus with different harnesses and effort levels wasn't fair. So here is a more controlled comparison.
+
+Same task for every run: a real feature from the LlamaStash roadmap (save llama-server's KV cache before an unload and restore it when the model comes back). Six combinations, each run twice, so 12 PRs. Flash-Next ran locally on my Strix Halo laptop (Flow Z13) via Halogen (~Q4 quant). Opus 5.5, Flash-Next, and Kimi K3 scored every PR on seven review questions plus CI.
+
+Combination	Score (of 8)	Time	API cost	Tokens (in / cached / out)
+Claude Code + Opus 5.5, xhigh	6.94 (87%)	43.5 min	$17.78	507k / 48.3M / 203k
+Claude Code + Opus 5.5, medium	6.25 (78%)	23.4 min	$6.52	242k / 13.4M / 95k
+Claude Code + Flash-Next, medium	5.5 (69%)	45.3 min	$0.32	445k / 13.5M / 82k
+Pi + Flash-Next, xhigh	5.44 (68%)	63.8 min	$0.67	316k / 35.0M / 134k
+Claude Code + Flash-Next, xhigh	5.38 (67%)	49.5 min	$0.39	269k / 18.9M / 99k
+Pi + Flash-Next, medium	5.06 (63%)	48.1 min	$0.56	242k / 29.1M / 117k
+Scores are the average of both runs. Time, cost and tokens are from the second run, where the 100k-token benchmark numbers were given in the prompt. Flash-Next cost is at the QwenCloud price for Qwen3.8-Flash; I ran it locally, so it cost me only electricity.
+
+TL;DR
+
+All 12 runs finished and all 12 PRs pass the end-to-end test.
+
+Opus wrote better code, 82% on average against 68% for Claude Code + Flash-Next and 66% for Pi + Flash-Next. The difference is in edge cases, tests and docs. The core feature works fine. The gap between Opus and Qwen is not that wide.
+
+Flash-Next took 1.1x to 2.1x as long as Opus at the same effort.
+
+With Flash-Next, Claude Code and Pi scored the same on the review questions. CI passed on 4 of 4 Claude Code PRs and 1 of 4 Pi PRs.
+
+xhigh helped Opus a bit at 2.7x the cost. For Flash-Next, medium and xhigh scored about the same, and medium was faster in all 4 pairs.
+
+Opus is still ahead, but Flash-Next was right behind, on my laptop, for the cost of electricity.
+
+Also note that the models are not on the same league. Opus is a frontier model run at FP16 or atleast FP8. I ran Flash-Next on my laptop at 4.16 bpw. Flash-Next at FP8 should show a bit more quality.
+
+The machine running Flash-Next ran at 70W TDP ceiling for the entire duration. I could have run it at 90W for slightly better speed but the fan noise and thermal stress was not worth it.
+
+Full write-up with the detailed methodology and the per-run results and what each model missed: https://deepu.tech/qwen3.8-flash-next-vs-claude-opus-showdown
+
+All 12 PRs are public if you want to read the code: https://github.com/deepu105/llamastash-b4r2/pulls",analysis
+"Stanford just dropped 5.5hrs worth of lectures on foundational LLM knowledge
+Enjoy? <url>",announcement
+"I built an offline-first voice AI with <1 s latency on my Mac M3
+Offline-first voice AI built with **FastAPI WebSocket + MLX**, running locally on **M3 Pro**.
+
+**<1 s speech-to-speech latency** using:
+• **silero-vad v6** + **pipecat-ai/smart-turn-v3** → fastest VAD + turn detection
+• **mlx-community/whisper-small.en-mlx-q4** → sentence-wise real-time STT
+• **mlx-community/LFM2-1.2B-4bit** (LLM) + **hexgrad/Kokoro-82M** (TTS) → fully parallel inference
+
+**Optimizations for <1 s:**
+1️⃣ Pre-warm all models
+2️⃣ Parallel **LLM + TTS** (generate + speak per sentence)
+3️⃣ Fastest VAD + smart-turn-3 for real-time segmentation
+
+Youtube Demo <url>
+Gtihub Repo <url>",analysis
+"Another use for my local llm
+I was helping a friend of mine with an article about AI and software development. As part of it GPT generated a Chrome extension for us, that grabs a content of a site you currently on, and sends it to my local lmstudio with a prompt. Lmstudio returns back list of facts, claims and opinions, along with evidence for each and displays it on the extension in english, regardless of the original site language. Its actually pretty cool, generation took about an hour of iterative process.",announcement
+"First results of the Neural accelerators of M5 are trickling in
+It seems that the promises of 3.5x TTFT in regards to the M4 are holding up quite well. A test of 10K prompt in 10 sec. is quite nice.
+<url> And diffuse models seems also to have a nice speed up:
+
+<url>",announcement
+"Latest upgrade…A100 40 GB
+Originally this was my gaming rig but I went ITX and basically bought a new computer. So I had the case, fans, AIO, 64 GB DDR5, motherboard, PSU, and 3080 (upgraded to 5070ti RIP). I was going to sell these parts, but I started running models on my 5070ti and eventually I wanted to start running larger models. I found a 3090 on eBay for $680, and 7950x for $350. I put that together with the parts and it’s been a great AI rig for me. I really didn’t plan on upgrading this for a while, especially now with the current price surges. Welp, I saw an A100 get listed for $1000 on eBay. The catch? Listed for parts, and the description just said “card reports CUDA error”. So I figured it was worth the risk (for me), I could’ve probably sold it for the price I paid. Well, I swapped out the 3080 and on the first boot it was recognized instantly by nvidia-smi. I was able to run and train models immediately. Nice.",reaction
+"A Time-Efficient AI Approach for Building a Domain-Specific Dense Retrieval Model
+The researchers from the College of Computer Science, Sichuan University and Engineering Research Center of Machine Learning and Industry Intelligence, Ministry of Education Chengdu, China, have introduced DREditor, a time-efficient method for adapting off-the-shelf dense retrieval models to specific domains <url>. DREditor achieves 100–300 times faster time efficiency while maintaining or surpassing retrieval performance.",announcement
+"Macbook bros, we eating good this week
+M4 pro has almost doubled the maximum RAM configuration from M3 pro. From that alone we can extrapolate another doubling for M3 Max -> M4 Max leading to 256 GB max ram. And maybe even 512 GB max ram for M4 Ultra. I think the larger local models will become much more accessible and hope Apple does more work to develop MLX and make it even more attractive to utilize local models on their hardware. The ROI on getting apple hardware for local inference seems the highest as of now.",hot_take
+"AI labs report benchmark scores 6.4% higher than independent testers, on average
+I've been building [whatmodel.sh](http://whatmodel.sh/), an open source AI leaderboard, and wanted to see how a labs' own benchmark scores compare with independent testers.
+Using 1,629 published benchmark results, I matched 611 comparisons of 180 models on 103 benchmarks. AI labs reported scores 6.4% higher on average for the same models on the same tests.
+Everything is open: the dataset is CC BY-SA 4.0 and the code is MIT. Sources and their licenses are recorded, with links on each model's page.
+Interactive chart: https://whatmodel.sh/claims
+Data and code: https://github.com/jakemanger/whatmodel
+Please star on Github if you find it useful. Contributions are very much welcome!",analysis

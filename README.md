@@ -179,6 +179,8 @@ Split sizes: To be filled in after running the notebook's train/validation/test 
  
 I used AI to pre-label the candidate posts. For my last few batches candidates came with a draft label and a `note` explaining it as a pre-label, and I started from those. I then reviewed the rows against my written definitions, and I revised the definitions during that review (adding the "stated in the post text" and "concrete outcome" requirements) and re-checked the whole file under the revised wording. That review changed 13 labels (10 `analysis` to `hot_take`, 1 `hot_take` to `analysis`, 1 `reaction` to `hot_take`, 1 `reaction` to `announcement`) and removed 1 out-of-scope row, so the pre-labels were not accepted wholesale. Claude also helped with the mechanics: it assembled `labels.csv` from the candidate posts acquired, computed the label counts.
 
+For the testing portion, I used AI primarily to review my results and ensure consistency. I also used Claude to help pick and verify the improvement chosen based on the results. 
+
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
      Don't fill these in during unit 5.
@@ -221,7 +223,7 @@ However, `reaction` F1 remained at 0.000, so fine-tuning did not improve perform
 | 2. Per-label F1 | At least 0.55 for every label; at least 0.45 for thinnest label (`reaction`) | analysis 0.667; announcement 0.733; hot_take 0.429; reaction 0.000 | analysis 0.500; announcement 0.774; hot_take 0.167; reaction 0.000 | analysis 0.667; announcement 0.684; hot_take 0.444; reaction 0.000 | MISSED — every seed |
 | 3. `analysis` / `hot_take` boundary | At most 25% in either direction on every seed | hot_take→analysis 1/7 (14.3%); analysis→hot_take 1/7 (14.3%) | hot_take→analysis 4/7 (57.1%); analysis→hot_take 1/7 (14.3%) | hot_take→analysis 0/7 (0%); analysis→hot_take 0/7 (0%) | MISSED — seed 7 |
 | 4. Dataset balance | No label over 50% and none under 30 rows | 208 rows; counts: announcement 87, analysis 47, hot_take 44, reaction 30 | Same dataset | Same dataset | MET |
-| 5. Label consistency | At least 80% agreement on a blind relabel of 30 rows | Not measured | Not measured | Not measured | NOT MEASURED — agreement report pending |
+| 5. Label consistency | At least 80% agreement on a blind relabel of 30 rows | N/A | N/A | N/A | MET (86.7%) |
 
 ### Confusion matrix
 
@@ -317,7 +319,7 @@ There were no disagreements to analyze, so this exercise provides no direct evid
 
 **What I changed:** The learning rate, from 2e-5 to 5e-5. Everything else is identical to the “before” run: DistilBERT base uncased, 8 epochs, batch size 16, MAX_LENGTH 128, seeds 42/7/2024, the same 208-row dataset and the same test split. I changed nothing in the data or labels.
 
-**Which diagnosis pointed at it:** Criteria 1 and 2. Across all three seeds the model never predicted reaction (F1 0.000), over-predicted announcement (recall 0.85–1.00), and was weakly confident even when correct (mean 0.48–0.60 against 0.25 chance). I read this as underfitting: with about 145 training rows, 8 epochs at batch 16 is roughly 80 optimizer steps at 2e-5, which looks too little to learn the minority labels. I did not pick relabelling, because the staff agreement check found no rule applied two ways, and the criterion 5 relabel on my own dataset is still unmeasured. I did not pick more data, because that would be a second change.
+**Which diagnosis pointed at it:** Criteria 1 and 2. Across all three seeds the model never predicted reaction (F1 0.000), over-predicted announcement (recall 0.85–1.00), and was weakly confident even when correct (mean 0.48–0.60 against 0.25 chance). I read this as underfitting: with about 145 training rows, 8 epochs at batch 16 is roughly 80 optimizer steps at 2e-5, which looks too little to learn the minority labels. I did not pick relabelling, because the staff agreement check found no rule applied two ways. I did not pick more data, because that would be a second change.
 
 ### Run Log — After
 
@@ -331,57 +333,55 @@ There were no disagreements to analyze, so this exercise provides no direct evid
 | 5. Label consistency | ≥ 80% agreement on 30 blind relabels | N/A | N/A | N/A | MET: 26/30 (86.7%) |
 
 **Did it help, and how do I know:**
-The change improved mean accuracy from approximately 0.573 to 0.604 and mean macro F1 from approximately 0.422 to 0.499. Mean hot_take F1 increased from 0.347 to 0.411, while reaction F1 increased from 0.000 to 0.194. Macro F1 spread across the three seeds decreased from 0.097 to 0.007, indicating more consistent macro F1 results in this experiment.
-
-However, accuracy remained below the 0.65 threshold for two seeds. Several per-label F1 scores remained below their required thresholds, and the analysis/hot_take confusion boundary still failed for two seeds.
-
-
-
+Modestly, and mostly on the label the diagnosis named. Mean accuracy rose from 0.573 to 0.604 and mean macro F1 from 0.422 to 0.499. reaction went from never predicted to occasionally right (mean F1 0.194, 2 correct of 15), and mean hot_take F1 rose from 0.347 to 0.411. Macro F1 spread across seeds fell from 0.097 to 0.007. Accuracy gains average about one test row per seed (1/32 = 0.031), so with a 32-row test set I can’t separate this from noise. The change also cost something: seed 42’s accuracy and analysis F1 fell (0.594 → 0.5625; 0.667 → 0.429), and criterion 3 now fails on two seeds instead of one. No previously missed criterion was met on every seed. Overall, a higher learning rate helped the model commit to minority labels, but reaction remains far from its target. The next candidate would be more reaction examples.
 
 ---
 
 ## What's Still Broken
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+**Criterion 1 — Overall accuracy**: I would investigate the remaining misclassifications and consider adding more carefully labeled examples, especially for underrepresented or difficult classes. I stopped after testing a higher learning rate because Milestone 5 allows one controlled change, and I wanted to measure its effect without introducing additional variables.
+
+**Criterion 2 — Per-label F1**: I would focus on improving reaction and stabilizing hot_take, since reaction F1 remained below 0.45 on every seed and hot_take performance varied considerably. I stopped because adding data or changing the training configuration again would require another experiment beyond the single improvement tested in this milestone.
+
+**Criterion 3 — Confusion boundary**: I would examine examples where hot_take was predicted as analysis and vice versa, then clarify the distinction between unsupported opinions and claims supported by checkable evidence if a future review revealed a consistent labeling issue. I stopped because this milestone allowed only one change, and I used it to test the learning rate rather than alter the taxonomy or labels.
 
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
 
+**Confusion Matrix**:
 
-
-<!-- ═════════════════════════════════════════════════════════════════════
+I intended analysis to represent claims supported by specific, checkable evidence, while hot_take represents judgments that lack sufficient supporting evidence; however, the confusion matrices show that the model still mixes up these categories, with hot_take → analysis reaching 57.1% for seed 7. I also intended reaction to capture posts centered on personal feelings or experiences, but the model continued to miss this class entirely for seed 2024, suggesting that it has not learned a reliable boundary for reaction across different splits.═════════════════════════════════════════════════════════════════════
 
      SUBMISSION CHECKLIST — unit 5
 
-       [ ] criteria.md has five numbered criteria, each naming a NUMBER
-       [ ] Each has a reason underneath tied to your data or taxonomy
-       [ ] labels.csv: at least 150 rows, text/label/note, ONE file not split
-       [ ] No label above 70%
-       [ ] All five unit 5 sections have real content
-       [ ] Label Taxonomy includes the decision rule for your hardest boundary
-       [ ] The Dataset includes three hard cases
-       [ ] results.json and test_split.csv committed (the notebook does this)
-       [ ] At least four new commits
-       [ ] Repository URL submitted — WRITE IT DOWN
+       [X] criteria.md has five numbered criteria, each naming a NUMBER
+       [X] Each has a reason underneath tied to your data or taxonomy
+       [X] labels.csv: at least 150 rows, text/label/note, ONE file not split
+       [X] No label above 70%
+       [x] All five unit 5 sections have real content
+       [X] Label Taxonomy includes the decision rule for your hardest boundary
+       [X] The Dataset includes three hard cases
+       [X] results.json and test_split.csv committed (the notebook does this)
+       [X] At least four new commits
+       [X] Repository URL submitted — WRITE IT DOWN
 
      SUBMISSION CHECKLIST — unit 6
 
-       [ ] Baseline vs. Trained table, with your prediction written beforehand
-       [ ] Run Log — Before, five criteria across three seeds
-       [ ] Confusion matrix TYPED AS A MARKDOWN TABLE
-       [ ] A verdict on every criterion
-       [ ] A diagnosis for every miss, using the agreement report as evidence
-       [ ] Agreement Report with every disagreement adjudicated
-       [ ] One improvement, with Run Log — After
-       [ ] What's Still Broken
-       [ ] results_three_seeds_before.json, results_three_seeds_after.json,
+       [X] Baseline vs. Trained table, with your prediction written beforehand
+       [X] Run Log — Before, five criteria across three seeds
+       [X] Confusion matrix TYPED AS A MARKDOWN TABLE
+       [X] A verdict on every criterion
+       [X] A diagnosis for every miss, using the agreement report as evidence
+       [X] Agreement Report with every disagreement adjudicated
+       [X] One improvement, with Run Log — After
+       [X] What's Still Broken
+       [X] results_three_seeds_before.json, results_three_seeds_after.json,
            baseline_results.json and
            agreement_results.json committed
-       [ ] At least four new commits
-       [ ] The SAME repository URL as last unit
+       [X] At least four new commits
+       [X] The SAME repository URL as last unit
 
      Do not delete and recreate this repository.
      ═════════════════════════════════════════════════════════════════════ -->
